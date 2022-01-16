@@ -12,14 +12,19 @@
 						<div id="page-contents" class="row merged20">
 							<div class="col-lg-9">
 								<div class="main-wraper">
-									<h4 class="main-title"><i class=""><svg class="feather feather-users" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg')}}"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle r="4" cy="7" cx="9"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i> Groups</h4>
+									<h4 class="main-title">
+										<i class="">
+											<svg class="feather feather-users" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg')}}"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle r="4" cy="7" cx="9"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+										</i> Groups
+										<a title="" href="#" class="button success ask-qst" style="text-decoration:none;"><i class="icofont-plus"></i> Create New Group</a>
+									</h4>
 									<div class="row col-xs-6">
 										<div class="col-lg-3 col-md-4 col-sm-4">
 											<div class="group-box">
 												<figure><img alt="" src="{{asset('images/resources/group1.jpg')}}"></figure>
 												<a title="" href="#">Sports Punch</a>
 												<span>125M Members</span>
-												<button>join group</button>
+												<button>join group</button>F
 											</div>
 										</div>
 										<div class="col-lg-3 col-md-4 col-sm-4">
@@ -316,40 +321,55 @@
 							<div class="col-lg-3">
 								<aside class="sidebar static right">
 									<div class="widget">
-										<h4 class="widget-title">Popular Books</h4>
-										<div class="popular-book">
-											<figure><img src="{{asset('images/resources/book10.jpg')}}" alt=""></figure>
-											<div class="book-about">
-												<h6><a href="#" title="">Vu.js 2 Basics</a></h6>
-												<span>Richard Ali</span>
-												<a href="#" title="Book Mark"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></i></a>
-											</div>
-										</div>
-										<div class="popular-book">
-											<figure><img src="{{asset('images/resources/book9.jpg')}}" alt=""></figure>
-											<div class="book-about">
-												<h6><a href="#" title="">Css3 for Bigners</a></h6>
-												<span>Richard Ali</span>
-												<a href="#" title="Book Mark"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></i></a>
-											</div>
-										</div>
-										<div class="popular-book">
-											<figure><img src="{{asset('images/resources/book5.jpg')}}" alt=""></figure>
-											<div class="book-about">
-												<h6><a href="#" title="">Technology Wants 2020</a></h6>
-												<span>Richard Ali</span>
-												<a href="#" title="Book Mark"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></i></a>
-											</div>
-										</div>
-									</div>
+										<h4 class="widget-title">Your Groups</h4>
+										<ul class="ak-groups">
+											@foreach ($my_groups as $group)
+												<li>
+													<figure><img src="{{asset('images/resources/your-group1.jpg')}}" alt=""></figure>
+													<div class="your-grp">
+														<h5><a href="group-detail.html" title="">{{$group->title}}</a></h5>
+														<a href="#" title=""><i class="icofont-bell-alt"></i>Notifilactions <span>13</span></a>
+														<a href="group-feed.html" title="" class="promote">view feed</a>
+													</div>
+												</li>
+											@endforeach
+										</ul>
+									</div><!-- Your groups -->
 									<div class="widget">
-										<h4 class="widget-title">Ask Research Question?</h4>
-										<div class="ask-question">
-											<i class="icofont-question-circle"></i>
-											<h6>Ask questions in Q&A to get help from experts in your field.</h6>
-											<a class="ask-qst" href="#" title="">Ask a question</a>
-										</div>
-									</div>
+										<h4 class="widget-title">Suggested Group</h4>
+										<div class="sug-caro">
+											<div class="friend-box">
+												<figure>
+													<img alt="" src="{{asset('images/resources/sidebar-info.jpg')}}">
+													<span>Members: 505K</span>
+												</figure>
+												<div class="frnd-meta">
+													<img alt="" src="{{asset('images/resources/frnd-figure2.jpg')}}">
+													<div class="frnd-name">
+														<a title="" href="#">Social Research</a>
+														<span>@biolabest</span>
+
+													</div>
+													<a class="main-btn2" href="#" title="">Join Community</a>
+												</div>
+											</div>
+											<div class="friend-box">
+												<figure>
+													<img alt="" src="{{asset('images/resources/sidebar-info2.jpg')}}">
+													<span>Members: 505K</span>
+												</figure>
+												<div class="frnd-meta">
+													<img alt="" src="{{asset('images/resources/frnd-figure3.jpg')}}">
+													<div class="frnd-name">
+														<a title="" href="#">Bio Labest Group</a>
+														<span>@biolabest</span>
+
+													</div>
+													<a class="main-btn2" href="#" title="">Join Community</a>
+												</div>
+											</div>
+										</div>	
+									</div><!-- suggested group -->
 									<div class="widget">
 										<h4 class="widget-title">Explor Events <a class="see-all" href="#" title="">See All</a></h4>
 										<div class="rec-events bg-purple">

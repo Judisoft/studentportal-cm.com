@@ -3,7 +3,7 @@
 			<li class="active menu-item-has-children">
 				<a class="" href="#" title="">
 					<i><svg id="icon-home" class="feather feather-home" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></i> 
-                    Home
+                    Feeds
 				</a>
 				<ul class="submenu">
 					<li><a href="{{route('news')}}" title="">Newsfeed</a></li>
@@ -18,7 +18,7 @@
                     <li><a href="{{URL::to('resources/books')}}" title="">Books</a></li>
 					<li><a href="{{URL::to('resources/courses')}}" title="">Courses</a></li>
 					<li><a href="{{URL::to('resources/videos')}}" title="">Video Lessons</a></li>
-                    <li><a href="{{URL::to('academia/questions')}}" title="">Questions</a></li>
+                    <li><a href="{{URL::to('academia/my-questions')}}" title="">Questions</a></li>
 				</ul>
 			</li>
 			
@@ -46,7 +46,7 @@
 				<ul class="submenu">
 					<li><a href="blog.html" title="">Blog</a></li>
 					<li><a href="#" title="">Questions/Answers</a></li>
-                    <li><a href="#" title="">Examination</a></li>
+                    <li><a href="#" title="">Examinations</a></li>
 				</ul>
 			</li>
 			<li class="menu-item-has-children">
@@ -61,8 +61,8 @@
 			</li>
 			<li class="">
 				<a class="" href="{{URL::to('institutions/universities')}}" title="">
-					<i><svg id="ab1" class="feather feather-users" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle r="4" cy="7" cx="9"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i>
-                    Academic Institutions
+					<i><svg id="icon-home" class="feather feather-home" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></i>  
+					Academic Institutions
 				</a>
 			</li>
             <li class="">

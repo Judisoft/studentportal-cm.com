@@ -302,7 +302,24 @@ Route::group(
     function () {
         Route::put('my-account', 'FrontEndController@update');
         Route::get('my-account', 'FrontEndController@myAccount')->name('my-account');
-        Route::get('user/settings', 'FrontEndController@userSettings');
+        Route::get('user/notifications', 'FrontEndController@notifications');
+        Route::get('user/messages', 'FrontEndController@messages');
+        Route::get('user/settings', 'FrontEndController@settings');
+        Route::get('marketplace/fund-account', 'MarketPlaceController@fundAccount');
+        //routes for past questions
+        Route::resource('resources/past-questions', 'PastQuestionsController');
+        /*routes for question*/
+        Route::resource('academia/my-questions', 'UserQuestionsController');
+           /*routes for blog*/
+           Route::group(
+            ['prefix' => 'question'],
+            function () {
+                Route::get('{question}/delete', 'UserQuestionsController@destroy')->name('question.delete');
+                Route::get('{question}/confirm-delete', 'UserQuestionsController@getModalDelete')->name('question.confirm-delete');
+                Route::get('{question}/restore', 'UserQuestionsController@restore')->name('question.restore');
+                Route::post('{question}/storecomment', 'UserQuestionsController@storeAnswer')->name('storeAnswer');
+            }
+        );
     }
 );
 // Email System
@@ -330,11 +347,21 @@ Route::get(
         return view('index');
     }]
 );
-
+//blog
 Route::get('blog', 'BlogController@index')->name('blog');
 Route::get('blog/{slug}/tag', 'BlogController@getBlogTag');
 Route::get('blogitem/{slug?}', 'BlogController@getBlog');
 Route::post('blogitem/{blog}/comment', 'BlogController@storeComment');
+
+//post
+Route::resource('posts', 'UserPostsController');
+
+//question
+Route::get('questions', 'QuestionController@index')->name('question');
+Route::get('question/{slug}/tag', 'QuestionController@getQuestionTag');
+Route::get('questionitem/{slug?}', 'QuestionController@getQuestion');
+//Route::post('questionitem/{question}/answer', 'QuestionController@storeAnswer');
+Route::post('questionitem/{question}', 'QuestionController@storeAnswer');
 
 //news
 Route::get('news', 'NewsController@index')->name('news');
@@ -344,7 +371,6 @@ Route::get('{name?}', 'FrontEndController@showFrontEndView');
 // End of frontend views
 Route::resource('resources/books', 'BooksController');
 Route::resource('resources/courses', 'CoursesController');
-Route::resource('academia/questions', 'QuestionsController');
 Route::resource('collaboration/groups', 'GroupsController');
 Route::resource('events/all-events', 'EventsController');
 Route::resource('chats/live-chat', 'ChatController');
@@ -352,10 +378,26 @@ Route::get('help', 'HelpController@index')->name('help');
 Route::resource('institutions/universities', 'InstitutionsController');
 Route::resource('marketplace/cart', 'MarketPlaceController');
 Route::get('marketplace/checkout', 'MarketPlaceController@checkout');
-Route::get('marketplace/fund-account', 'MarketPlaceController@fundAccount');
 Route::get('marketplace/invoice', 'MarketPlaceController@invoice');
 Route::get('marketplace/pricing-plan', 'MarketPlaceController@pricingPlan');
 Route::get('marketplace/payout', 'MarketPlaceController@payOut');
 Route::resource('resources/videos', 'VideosController');
 Route::resource('marketplace/bookshop', 'BookshopController');
 Route::get('livestream', 'LivestreamController@index')->name('live-stream');
+Route::get('privacy', 'FrontEndController@privacy');
+Route::resource('invitations/index', 'InvitationsController');
+//Route::resource('marketplace/checkout', 'CheckoutController');
+Route::get('marketplace/checkout', 'CheckoutController@checkout')->name('checkout');
+  // Examinations controller
+
+  Route::resource('resources/examinations', 'ExaminationsController');
+//contact 
+Route::post('contact', 'ContactsController@storeContact');
+
+//Questions Likes
+Route::post('/questions/{question}/likes', 'QuestionsLikeController@store')->name('questions.likes');
+Route::delete('/questions/{question}/likes', 'QuestionsLikeController@destroy')->name('questions.likes');
+
+//Answer Votes
+Route::post('/questionitem/{answer}/vote_answers', 'VoteAnswersController@store')->name('answers.vote');
+Route::delete('/questionitem/{answer}/vote_answers', 'VoteAnswersController@destroy')->name('answers.vote');

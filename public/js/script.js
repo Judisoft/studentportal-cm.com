@@ -370,7 +370,7 @@ if ($.isFunction($.fn.dropzone)) {
 // auto typer typed	
 if ($.isFunction($.fn.typed)) {
 	$(".feature-meta > h3 span").typed({
-		strings: ["Engineering", "Mathamatics", "Computer", "Science", "Climate"],
+		strings: ["friends", "teachers", "academic institutions"],
 		loop: true,
 		startDelay: 1e3,
 		backDelay: 3e3,

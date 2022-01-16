@@ -46,40 +46,57 @@
 							<div class="col-lg-3">
 								<aside class="sidebar static right">
 									<div class="widget">
-										<h4 class="widget-title">Popular Books</h4>
-										<div class="popular-book">
-											<figure><img src="images/resources/book10.jpg" alt=""></figure>
-											<div class="book-about">
-												<h6><a href="#" title="">Vu.js 2 Basics</a></h6>
-												<span>Richard Ali</span>
-												<a href="#" title=""><i class="icofont-book-mark"></i></a>
-											</div>
-										</div>
-										<div class="popular-book">
-											<figure><img src="images/resources/book9.jpg" alt=""></figure>
-											<div class="book-about">
-												<h6><a href="#" title="">Css3 for Bigners</a></h6>
-												<span>Richard Ali</span>
-												<a href="#" title=""><i class="icofont-book-mark"></i></a>
-											</div>
-										</div>
-										<div class="popular-book">
-											<figure><img src="images/resources/book5.jpg" alt=""></figure>
-											<div class="book-about">
-												<h6><a href="#" title="">Technology Wants 2020</a></h6>
-												<span>Richard Ali</span>
-												<a href="#" title=""><i class="icofont-book-mark"></i></a>
-											</div>
-										</div>
-									</div>
+										<h4 class="widget-title">Recent Blogs <a title="" href="#" class="see-all">See All</a></h4>
+										<ul class="recent-links">
+											<li>
+												<figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
+												<div class="re-links-meta">
+													<h6><a href="#" title="">Moira's fade reach much farther...</a></h6>
+													<span>2 weeks ago </span>
+												</div>
+											</li>
+											<li>
+												<figure><img src="images/resources/recentlink-2.jpg" alt=""></figure>
+												<div class="re-links-meta">
+													<h6><a href="#" title="">Daniel asks The voice of doomfist...</a></h6>
+													<span>3 months ago </span>
+												</div>
+											</li>
+											<li>
+												<figure><img src="images/resources/recentlink-3.jpg" alt=""></figure>
+												<div class="re-links-meta">
+													<h6><a href="#" title="">The Socimo over watch scandals.</a></h6>
+													<span>1 day before</span>
+												</div>
+											</li>
+										</ul>
+									</div><!-- recent links -->
 									<div class="widget">
-										<h4 class="widget-title">Ask Question?</h4>
-										<div class="ask-question">
-											<i class="icofont-question-circle"></i>
-											<h6>Ask questions in Q&A to get help from experts in your field.</h6>
-											<a class="ask-qst" href="#" title="">Ask a question</a>
-										</div>
-									</div>
+										<h4 class="widget-title">Recent Activity <a class="see-all" href="#" title="">see all</a></h4>
+										<ul class="activitiez">
+											<li>
+												<div class="activity-meta">
+													<span><a href="#" title="">Commented on Your's post </a></span>
+													<h6>by <a href="time-line.html">black demon.</a></h6>
+													<i>10 hours Ago</i>
+												</div>
+											</li>
+											<li>
+												<div class="activity-meta">
+													<span>
+													<a href="#" title="">Adam Gill Like your Post</a></span>
+													<i>Yesterday</i>
+												</div>
+											</li>
+											<li>
+												<div class="activity-meta">
+													<span><a href="#" title="">Share a video on Your's timeline.</a></span>
+													<h6>"<a href="#">How to Write Content.</a>"</h6>
+													<i>2 days Ago</i>
+												</div>
+											</li>
+										</ul>
+									</div><!-- recent activites -->
 									<div class="widget">
 										<h4 class="widget-title">Explor Events <a class="see-all" href="#" title="">See All</a></h4>
 										<div class="rec-events bg-purple">

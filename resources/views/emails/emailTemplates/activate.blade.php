@@ -1,136 +1,338 @@
-@extends('emails/layouts/emailTemplate')
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
-@section('content')
-    <table data-module="travel 2" data-thumb="thumbnails/thumbnail2.png" data-bgcolor="Main BG" width="100%" style="font-family: 'Montserrat',Arial, sans-serif;" bgcolor="#ececec" border="0" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>
-            <td align="center">
-                <table align="center" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                    <tr>
-                        <td width="600" bgcolor="#fff" align="center">
-                            <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
+<head>
+  <!--[if gte mso 9]>
+<xml>
+  <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="x-apple-disable-message-reformatting">
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--<![endif]-->
+  <title></title>
+    <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/color.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+
+  <style type="text/css">
+    table,
+    td {
+      color: #000000;
+    }
+    
+    a {
+      color: #0000ee;
+      text-decoration: underline;
+    }
+    
+    @media only screen and (min-width: 620px) {
+      .u-row {
+        width: 600px !important;
+      }
+      .u-row .u-col {
+        vertical-align: top;
+      }
+      .u-row .u-col-100 {
+        width: 600px !important;
+      }
+    }
+    
+    @media (max-width: 620px) {
+      .u-row-container {
+        max-width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+      .u-row .u-col {
+        min-width: 320px !important;
+        max-width: 100% !important;
+        display: block !important;
+      }
+      .u-row {
+        width: calc(100% - 40px) !important;
+      }
+      .u-col {
+        width: 100% !important;
+      }
+      .u-col>div {
+        margin: 0 auto;
+      }
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    table,
+    tr,
+    td {
+      vertical-align: top;
+      border-collapse: collapse;
+    }
+    
+    p {
+      margin: 0;
+    }
+    
+    .ie-container table,
+    .mso-container table {
+      table-layout: fixed;
+    }
+    
+    * {
+      line-height: inherit;
+    }
+    
+    a[x-apple-data-detectors='true'] {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+  </style>
+
+
+
+  <!--[if !mso]><!-->
+  <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css">
+  <!--<![endif]-->
+
+</head>
+
+<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f9f9f9;color: #000000">
+  <!--[if IE]><div class="ie-container"><![endif]-->
+  <!--[if mso]><div class="mso-container"><![endif]-->
+  <table style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #f9f9f9;width:100%" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr style="vertical-align: top">
+        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #f9f9f9;"><![endif]-->
+
+
+          <div class="u-row-container" style="padding: 0px;background-color: transparent">
+            <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+              <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+
+                <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                  <div style="width: 100% !important;">
+                    <!--[if (!mso)&(!IE)]><!-->
+                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                      <!--<![endif]-->
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!--[if (!mso)&(!IE)]><!-->
+                    </div>
+                    <!--<![endif]-->
+                  </div>
+                </div>
+                <!--[if (mso)|(IE)]></td><![endif]-->
+                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+              </div>
+            </div>
+          </div>
+          <div class="u-row-container" style="padding: 0px;background-color: transparent">
+            <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+              <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #003399;"><![endif]-->
+
+                <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                  <div style="width: 100% !important;">
+                    <!--[if (!mso)&(!IE)]><!-->
+                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                      <!--<![endif]-->
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:40px 10px 10px;font-family:'Cabin',sans-serif;" align="center">
+                              <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
-                                    <td height="60" style="background-color:#403e3e;font-family: 'Montserrat',Arial, sans-serif;font-size:26px;font-weight:500;letter-spacing:1px;line-height:30px;" align="center">
-                                        <center>
-                                            <img data-crop="false" style="display:block;"
-                                                 src="{{ asset('images/logo.png') }}" alt="img"/>
-                                        </center>
+                                    <td style="padding-right: 0px;padding-left: 0px;" align="center">
+                                        <img align="center" border="0" src="{{asset('images/email/logo.png')}}" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;"
+                                        width="179.2" />
                                     </td>
                                 </tr>
-                                <tr height="50"></tr>
-                                <tr>
-                                    <td style="color:#141d23;font-family: 'Montserrat',Arial, sans-serif;font-size:26px;font-weight:600;letter-spacing:1px;line-height:30px;" data-bgcolor="Title" data-color="Title" data-size="Title" data-min="12" data-max="60" align="center">
-                                        Hello!!
-                                    </td>
-                                </tr>
+                              </table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:40px 10px 10px;font-family:'Cabin',sans-serif;" align="center">
+
+                              <div style="color: #ffffff; line-height: 140%; padding-left: 50px !important; word-wrap: break-word;">
+                                <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 28px; line-height: 39.2px;"><strong><span style="line-height: 39.2px; font-size: 24px; color: #007bff !important;">Verify Your E-mail Address </span></strong>
+                                  </span>
+                                </p>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!--[if (!mso)&(!IE)]><!-->
+                    </div>
+                    <!--<![endif]-->
+                  </div>
+                </div>
+                <!--[if (mso)|(IE)]></td><![endif]-->
+                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+              </div>
+            </div>
+          </div>
+          <div class="u-row-container" style="padding: 0px;background-color: transparent">
+            <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+              <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #ffffff;"><![endif]-->
+
+                <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                  <div style="width: 100% !important;">
+                    <!--[if (!mso)&(!IE)]><!-->
+                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                      <!--<![endif]-->
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:33px 55px;font-family:'Cabin',sans-serif;" align="left">
+
+                              <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
+                                <p style="font-size: 14px; line-height: 160%; color: #000000;"><span style="font-size: 18px; line-height: 35.2px;">Dear <strong>{!! $user['user_name'] !!}</strong></span></p>
+                                <p style="font-size: 14px; line-height: 160%;">You have received this email because this email address has been used to create a new user profile for studport CM.<br /><br />
+                                    Before you can use the new user profile to login, you must first activate the profile and create a password. You activate the profile and create a password by clicking the link below.</p> <br />
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 14px; line-height: 28.8px;">Please click on the button below to verify your email address</span></p>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Cabin',sans-serif;" align="left">
+
+                              <div align="center">
+                                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:'Cabin',sans-serif;"><tr><td style="font-family:'Cabin',sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:46px; v-text-anchor:middle; width:234px;" arcsize="8.5%" stroke="f" fillcolor="#ff6600"><w:anchorlock/><center style="color:#FFFFFF;font-family:'Cabin',sans-serif;"><![endif]-->
+                                <a href="{!! $user['activationUrl'] !!}" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Cabin',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #007bff; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+                                  <span style="display:block;padding:14px 44px 13px;line-height:120%;"><span style="font-size: 16px; line-height: 19.2px;"><strong><span style="line-height: 19.2px; font-size: 16px;">VERIFY YOUR EMAIL</span></strong>
+                                  </span>
+                                  </span>
+                                </a>
+                                <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:33px 45px 60px;font-family:'Cabin',sans-serif;" align="left">
+
+                              <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
+                                <p style="line-height: 160%; font-size: 14px;"><span style="font-size: 14px; line-height: 28.8px;font-weight:400;">Thanks,</span></p>
+                                <p style="line-height: 160%; font-size: 14px;"><span style="font-size: 14px; line-height: 28.8px;font-weight:400;">The Company Team</span></p>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!--[if (!mso)&(!IE)]><!-->
+                    </div>
+                    <!--<![endif]-->
+                  </div>
+                </div>
+                <!--[if (mso)|(IE)]></td><![endif]-->
+                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+              </div>
+            </div>
+          </div>
 
 
-                                <tr>
-                                    <td style="color:#141d23;font-family: 'Montserrat',Arial, sans-serif;font-size:22px;font-weight:600;letter-spacing:1px;line-height:30px;" data-bgcolor="Title" data-color="Title" data-size="Title" data-min="12" data-max="60" align="center">
-                                        {!! $user['user_name'] !!}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="20"></td>
-                                </tr>
 
-                                <tr>
-                                    <td style="color:#141d23;font-family: 'Montserrat',Arial, sans-serif;font-size:18px;padding-right:30px;padding-left:30px;font-weight:500;letter-spacing:1px;line-height:30px;" data-bgcolor="Title" data-color="Title" data-size="Title" data-min="12" data-max="60" align="center">
-                                        Welcome to Josh Admin! Please click on the Below button to confirm your Josh account
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="20"></td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        <table align="center">
-                                            <tbody>
-                                            <tr>
-                                                <td width="400" align="center">
-                                                    <table data-bgcolor="Box" width="90%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td height="10">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center">
-                                                                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                                    <!--image-->
-                                                                    <tbody>
-                                                                    <tr>
-                                                                        <td align="center" width="200" valign="middle" style="border-collapse:collapse!important;border-radius:35px;padding:20px 25px" bgcolor="#6791de">
-                                                                            <a href="{!! $user['activationUrl'] !!}" style="color:#fff!important;text-decoration:none;display:block;font-size:23px;font-style:italic" target="_blank" >Activate</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
+          <div class="u-row-container" style="padding: 0px;background-color: transparent">
+            <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+              <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #e5eaf5;"><![endif]-->
 
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="20"></td>
-                                </tr>
+                <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                  <div style="width: 100% !important;">
+                    <!--[if (!mso)&(!IE)]><!-->
+                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                      <!--<![endif]-->
 
-                                <tr>
-                                    <td height="20"></td>
-                                </tr>
+                      <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="overflow-wrap:break-word;word-break:break-word;padding:35px 55px 18px;font-family:'Cabin',sans-serif;" align="center">
 
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                              <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 20px; line-height: 32px; color: #010101;"><strong>Get in touch</strong></span></p>
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 14px; line-height: 25.6px;color: #007bff;">Telephone: (+237) 672076996</span></p>
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 14px; line-height: 25.6px;color: #007bff;">Email: contact@studentportal-cm.com</span></p>
+                              </div>
 
-    <table bg-color="#7f8c8d" style="font-family: 'Montserrat', Arial, sans-serif;color:#7f8c8d" width="100%" bgcolor="#fff" align="center" border="0" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>
-            <td data-bg="header bg" data-bgcolor="header bg" align="center" bgcolor="#ececec">
-                <table align="center" border="0" cellpadding="0" cellspacing="0">
-                    <tbody>
-                    <tr>
-                        <td width="600" align="center" bgcolor="#403e3e">
-                            <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                <tr>
-                                    <td height="10"></td>
-                                </tr>
-                                <tr>
-                                    <td align="center" data-link-style="text-decoration:none; color:#a2a9af;" data-link-color="Content" data-size="Content" data-color="Content" style="font-family: 'Open Sans', Arial, sans-serif; font-size:15px; color:#a2a9af; line-height:30px;">
-                                        <singleline>
-                                            © 2018. Designed by <a href="https://themeforest.net/user/jyostna" style="font-family: 'Open Sans', Arial, sans-serif; font-size:15px; color:#fec400 ;" data-color="copy right color">Jyostna</a>
-                                        </singleline>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="5"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table>
+                        <tbody>
+                            <tr>
+                                <td style="padding-left:20px;">
+                                    <singleline style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; text-align: center; margin-right: auto;">
+                                        <span style="font-size: 12px; line-height: 28.8px; text-align:center;">Copyrights &copy; @php echo date('Y'); @endphp All Rights Reserved</span>
+                                    </singleline>
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
 
-@endsection
+                      <!--[if (!mso)&(!IE)]><!-->
+                    </div>
+                    <!--<![endif]-->
+                  </div>
+                </div>
+                <!--[if (mso)|(IE)]></td><![endif]-->
+                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+              </div>
+            </div>
+          </div>
+          <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--[if mso]></div><![endif]-->
+  <!--[if IE]></div><![endif]-->
+</body>
 
+</html>

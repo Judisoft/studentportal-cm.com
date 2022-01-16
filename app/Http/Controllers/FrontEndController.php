@@ -25,6 +25,8 @@ use App\Mail\Contact;
 use App\Mail\ContactUser;
 use App\Mail\ForgotPassword;
 use App\Models\Country;
+use App\Models\QuestionCategory;
+
 
 class FrontEndController extends JoshController
 {
@@ -95,7 +97,8 @@ class FrontEndController extends JoshController
     {
         $user = Sentinel::getUser();
         $countries = Country::all()->pluck('name', 'sortname')->toArray();
-        return view('user_account', compact('user', 'countries'));
+        $question_categories = QuestionCategory::select('title')->get();
+        return view('user_account', compact('user', 'countries', 'question_categories'));
     }
 
     /**
@@ -173,7 +176,7 @@ class FrontEndController extends JoshController
         $activate = $this->user_activation; //make it false if you don't want to activate user automatically it is declared above as global variable
         try {
             // Register the user
-            $user = Sentinel::register($request->only(['first_name', 'last_name', 'email', 'password', 'gender']), $activate);
+            $user = Sentinel::register($request->only(['first_name', 'last_name', 'email', 'password', 'gender', 'institution', 'department', 'designation']), $activate);
             //add user to 'User' role
             $role = Sentinel::findRoleByName('User');
             $role->users()->attach($user);
@@ -379,10 +382,27 @@ class FrontEndController extends JoshController
         return redirect('login')->with('success', 'You have successfully logged out!');
     }
 
-    public function userSettings()
+    
+    public function privacy()
+    {
+        return view('privacy');
+    }
+
+    public function settings()
     {
         $user = Sentinel::getUser();
         $countries = Country::select('name')->get();
         return view('user.settings', compact('user', 'countries'));
     }
+
+    public function notifications()
+    {
+        return view('user.notifications');
+    }
+
+    public function messages()
+    {
+        return view('user.messages');
+    }
+    
 }

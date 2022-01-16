@@ -51,12 +51,12 @@
 		</ul>
 	</div>
 	<div class="auth-login">
-		<div class="logo"><img src="images/logo.png" alt=""><span>StudPort</span></div>
+		<div class="logo"><img src="images/logo.png" alt=""><span>StudPort CM</span></div>
 		<div class="mockup left-bottom"><img src="images/mockup.png" alt=""></div>
 		<div class="verticle-center">
 			<div class="login-form">
 				<h4><i class="icofont-key-hole"></i> Login</h4>
-                <span class="float-right"><a href="{{route('forgot-password')}}" class="text-danger">Forgot Password</a></span>
+                <span class="float-right"><a href="{{route('forgot-password')}}" class="text-danger">Forgot Password?</a></span>
                 <div id="notific">@include('notifications')</div>
                 <form action="{{ route('login') }}" class="c-form" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

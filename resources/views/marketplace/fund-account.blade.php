@@ -13,22 +13,20 @@
 							<div class="widget">
 								<h4 class="widget-title">Credit Balance</h4>
 								<div class="card-credit">
-									<p>Your credits will be using on Purchasing items from <b>Sociomo</b></p>
-									<h6>$500</h6>
-									<span>added via Paypal</span>
-									
+									<p>Your credits will be used to Purchase items from <b>StudentPortal CM</b></p>
+									<h6>FCFA 00,00</h6>
 								</div>
 							</div>
 							<div class="widget">
-								<h4 class="widget-title">Saved Cards</h4>
+								<h4 class="widget-title">You can fund your account using MTN MoMo of Orange Money</h4>
 								<div class="set-card">
-									<img src="{{asset('images/paypal.png')}}" alt="">
-									<p>
-										Get paid by credit or debit card
-									</p>
-									<a class="main-btn" href="#" title="">Edit Card</a>
-									<div class="added-complete">
-										<h6>Added: <span>25 Mar 2020</span></h6>
+									<div class="d-flex flex-row">
+										<div class="p-0">
+											<img src="{{asset('images/funding/momo.jpeg')}}" >
+										</div>
+										<div class="p-0">
+											<img src="{{asset('images/funding/om.png')}}" >
+										</div>
 									</div>
 								</div>
 							</div>
@@ -37,11 +35,14 @@
 					</div>
 					<div class="col-lg-8">
 						<div class="main-wraper">
-							<h4 class="main-title">Add Credits</h4>
+							<h4 class="main-title">Add Credits using a Credit or Debit Card</h4>
 							<h6 class="mb-4">You May add your payment method or credits By Credit Cards</h6>
 							<div class="add-credits">
 								<form>
 									<fieldset class="row merged-10">
+										<div class="mb-4 col-lg-12 col-md-12 col-sm-12">
+											<input class="uk-input" type="number" min="500" placeholder="Amount">
+										</div>
 										<div class="mb-4 col-lg-6 col-md-6 col-sm-6">
 											<input class="uk-input" type="text" placeholder="Holder Name">
 										</div>
@@ -67,10 +68,6 @@
 										</div>	
 									</fieldset>
 								</form>
-								<p>
-									<b>Special Note:</b>
-									"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system,
-								</p>
 							</div>
 						</div>
 					</div>

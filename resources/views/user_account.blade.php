@@ -12,10 +12,16 @@
 					<div class="col-lg-12">
 						<div class="post-subject">
 							<div class="university-tag">
-								<figure><img src="images/resources/user.jpg" alt=""></figure>
+								<figure>
+									@if(Sentinel::getUser()->pic)
+										<img src="{{Sentinel::getUser()->pic}}" alt="">
+									@else
+										<img src="{{asset('images/no_avatar.png')}}" alt="">
+									@endif
+								</figure>
 								<div class="uni-name">
 									<h4>{{Sentinel::getUser()->full_name}}</h4>
-									<span>{{'@'.Sentinel::getUser()->first_name.'official'}}</span>
+									<span>{{Sentinel::getUser()->user_type}}</span>
 								</div>
 								<ul class="sharing-options">
 									<li><a title="Invite Colleagues" href="#" data-toggle="tooltip"><i class="icofont-id-card"></i></a> </li>
@@ -48,11 +54,12 @@
 								<div class="tab-content">
 								    <div class="tab-pane fade active show" id="timeline" >
 										<div class="main-wraper">
-											<span class="new-title">Create New Post</span>
+											<span class="new-title"> Create New Post</span>
 											<div class="new-post">
-												<form method="post">
+												<form action="{{action('UserQuestionsController@store')}}" method="POST">
+                                    				<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 													<i class="icofont-pen-alt-1"></i>
-													<input type="text" placeholder="Create New Post">
+													<input type="text" name="content" placeholder="Hello {{Sentinel::getUser()->first_name}}, What's on your mind?" value="{{old('content')}}">
 												</form>
 												<ul class="upload-media">
 													<li>
@@ -80,7 +87,7 @@
 														<div class="more">
 															<div class="more-post-optns">
 																<i class="">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></i>
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></i>
 																<ul>
 																	<li>
 																		<i class="icofont-pen-alt-1"></i>Edit Post
@@ -113,30 +120,26 @@
 															<ul>
 																<li>
 																	<span title="views" class="views">
-																		<i>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></i>
+																		<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></i>
 																		<ins>1.2k</ins>
 																	</span>
 																</li>
 																<li>
 																	<span title="Comments" class="Recommend">
-																		<i>
-		<svg class="feather feather-message-square" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></i>
+																		<i><svg class="feather feather-message-square" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></i>
 																		<ins>54</ins>
 																	</span>
 
 																</li>
 																<li>
 																	<span title="follow" class="Follow">
-																		<i>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></i>
+																		<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></i>
 																	<ins>5k</ins>	
 																	</span>
 																</li>
 																<li>
 																	<span class="share-pst" title="Share">
-																		<i>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></i>
+																		<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></i>
 																	<ins>205</ins>
 																	</span>	
 																</li>
@@ -293,7 +296,7 @@
 														<div class="more">
 															<div class="more-post-optns">
 																<i class="">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></i>
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></i>
 																<ul>
 																	<li>
 																		<i class="icofont-pen-alt-1"></i>Edit Post
@@ -601,30 +604,26 @@
 															<ul>
 																<li>
 																	<span title="views" class="views">
-																		<i>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></i>
+																		<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></i>
 																		<ins>1.2k</ins>
 																	</span>
 																</li>
 																<li>
 																	<span title="Comments" class="Recommend">
-																		<i>
-		<svg class="feather feather-message-square" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></i>
+																		<i><svg class="feather feather-message-square" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></i>
 																		<ins>54</ins>
 																	</span>
 
 																</li>
 																<li>
 																	<span title="follow" class="Follow">
-																		<i>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></i>
+																		<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></i>
 																	<ins>5k</ins>	
 																	</span>
 																</li>
 																<li>
 																	<span class="share-pst" title="Share">
-																		<i>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></i>
+																		<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></i>
 																	<ins>205</ins>
 																	</span>	
 																</li>
@@ -1974,22 +1973,40 @@
 							<div class="col-lg-4">
 								<aside class="sidebar static right">
 									<div class="widget">
-										<h4 class="widget-title">Post Analytics</h4>
-										<ul class="widget-analytics">
-											<li>Reads <span>56</span></li>
-											<li>Recommendations <span>3</span></li>
-											<li>Shares <span>22</span></li>
-											<li>References <span>17</span></li>
-										</ul>
-									</div>
-									<div class="widget">
-										<h4 class="widget-title">Ask Research Question?</h4>
-										<div class="ask-question">
-											<i class="icofont-question-circle"></i>
-											<h6>Ask questions in Q&A to get help from experts in your field.</h6>
-											<a class="ask-qst" href="#" title="">Ask a question</a>
-										</div>
-									</div>
+										<h4 class="widget-title">Suggested Group</h4>
+										<div class="sug-caro">
+											<div class="friend-box">
+												<figure>
+													<img alt="" src="{{asset('images/resources/sidebar-info.jpg')}}">
+													<span>Members: 505K</span>
+												</figure>
+												<div class="frnd-meta">
+													<img alt="" src="{{asset('images/resources/frnd-figure2.jpg')}}">
+													<div class="frnd-name">
+														<a title="" href="#">Social Research</a>
+														<span>@biolabest</span>
+
+													</div>
+													<a class="main-btn2" href="#" title="">Join Community</a>
+												</div>
+											</div>
+											<div class="friend-box">
+												<figure>
+													<img alt="" src="{{asset('images/resources/sidebar-info2.jpg')}}">
+													<span>Members: 505K</span>
+												</figure>
+												<div class="frnd-meta">
+													<img alt="" src="{{asset('images/resources/frnd-figure3.jpg')}}">
+													<div class="frnd-name">
+														<a title="" href="#">Bio Labest Group</a>
+														<span>@biolabest</span>
+
+													</div>
+													<a class="main-btn2" href="#" title="">Join Community</a>
+												</div>
+											</div>
+										</div>	
+									</div><!-- suggested group -->
 									<div class="widget">
 										<h4 class="widget-title">Explor Events <a class="see-all" href="#" title="">See All</a></h4>
 										<div class="rec-events bg-purple">

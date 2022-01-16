@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-	<title>StudentPortal CM | Home</title>
+	<title>StudPort CM - Home</title>
     <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
     
     <link rel="stylesheet" href="css/main.min.css">
@@ -22,14 +22,7 @@
 <div class="theme-layout">
 	
 	<div class="responsive-header">
-		<div class="logo res"><img src="images/logo.png" alt=""><span>StudentPortal CM</span></div>
-		<div class="user-avatar mobile">
-			<a href="profile.html" title="View Profile"><img alt="" src="images/resources/user.jpg"></a>
-			<div class="name">
-				<h4>Danial Cardos</h4>
-				<span>Ontario, Canada</span>
-			</div>
-		</div>
+		<div class="logo res"><img src="images/logo.png" alt=""><span>StudPort CM</span></div>
 		<div class="right-compact">
 			<div class="sidemenu">
 				<i><svg id="side-menu2" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></i>
@@ -49,7 +42,7 @@
 	
 	<header class="transparent">
 		<div class="topbar">
-			<div class="logo"><img src="images/logo.png" alt=""><span>StudentPortal CM</span></div>
+			<div class="logo"><img src="images/logo.png" alt=""><span>StudPort CM</span></div>
 			<div class="searches">
 				<form method="post">
 					<input type="text" placeholder="Search...">
@@ -81,12 +74,14 @@
 				</form>
 			</div>
 			<ul>
-				<li><a class="join-butn" href="{{route('my-account')}}" title="">Today's Feed</a></li>
-				<li><a href="#" title="">help</a></li>
-				<li><a href="#" title=""><img src="images/flags/US.png" alt=""></a></li>
-                @if(Sentinel::guest())
-				    <li><a href="{{route('login')}}" title="">Login / Register</a></li>
-                @endif
+				@if(Sentinel::guest())
+				<li><a class="join-butn" href="{{route('login')}}" title="">Login</a></li>
+				@else
+				<li><a class="join-butn" href="{{route('my-account')}}" title="">My News Feed</a></li>
+				@endif
+
+				<li><a href="#" title="">help center</a></li>
+				<li><a href="#" title=""><img src="images/flags/US.png" alt=""> English</a></li>
 			</ul>
 		</div>
 	</header>
@@ -219,10 +214,10 @@
 	
 	<section>
 		<div class="gap overlap nogap mate-black low-opacity">
-			<div class="bg-image" style="background-image: url(images/resources/slider3.jpg)"></div>
+			<div class="bg-image" style="background-image: url(images/resources/home.jpg)"></div>
 			<div class="feature-meta">
-				<h1>Discover Your <span>Scientific</span> Knowledge</h1>
-				<h3>and stay connected with <span></span></h3>
+				<h1>Building Digital <span>Communities</span> for academic excellence</h1>
+				<h3>stay connected with <span></span></h3>
 				<a href="{{route('register')}}" title="" class="main-btn" data-ripple="">Join Free</a>
 			</div>
 		</div>	
@@ -234,28 +229,28 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="info-sec">
-							<i class="icofont-checked"></i>
+							<i class="icofont-support-faq"></i>
 							<div>
-								<h6>Learn from industry experts</h6>
-								<p>Share your research, collaborate with your peers, and get the support you need to advance your career.</p>
+								<h6>Learn from experienced teachers</h6>
+								<p>Ask questions and receive answers from professional experts and receive the support you need.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="info-sec">
-							<i class="icofont-play-alt-1"></i>
+							<i class="icofont-hard-disk"></i>
 							<div>
-								<h6>Find video Course of any topic</h6>
-								<p>Share your research, collaborate with your peers, and get the support you need to advance your career.</p>
+								<h6>Find all resources you need</h6>
+								<p>We have a collection of lecture notes, research papers, books, past examination questions and all that a student needs</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="info-sec">
-							<i class="icofont-clock-time"></i>
+							<i class="icofont-live-support"></i>
 							<div>
-								<h6>Go at your own pace</h6>
-								<p>Share your research, collaborate with your peers, and get the support you need to advance your career.</p>
+								<h6>Support and Orientation</h6>
+								<p>We provide real-time support to meet your urgent academic needs. We are available to assist you succeed, we're just a click away</p>
 							</div>
 						</div>
 					</div>
@@ -273,30 +268,30 @@
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="funfact-counter">
-										<i class="icofont-air-ticket"></i>
+										<i class="icofont-teacher"></i>
 										<span class="counter">599</span>
+										<em>Teachers</em>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="funfact-counter">
+										<i class="icofont-group-students"></i>
+										<span class="counter">299</span>
+										<em>Students</em>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="funfact-counter">
+										<i class="icofont-users"></i>
+										<span class="counter"></span>
 										<em>Researchers</em>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="funfact-counter">
-										<i class="icofont-network"></i>
-										<span class="counter">299</span>
-										<em>Registered user</em>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-6">
-									<div class="funfact-counter">
-										<i class="icofont-network-tower"></i>
-										<span class="counter">600</span>
-										<em>Active People</em>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-6">
-									<div class="funfact-counter">
-										<i class="icofont-microphone-alt"></i>
+										<i class="icofont-university"></i>
 										<span class="counter">12</span>
-										<em>Post Published</em>
+										<em>Institutions</em>
 									</div>
 								</div>
 							</div>
@@ -314,11 +309,13 @@
 					<div class="col-lg-7 col-md-7">
 						<div class="verticle-center">
 							<div class="measure">
-								<i class="icofont-light-bulb"></i>
-								<h2>Measure Your scientific impact</h2>
-								<p>
-									Get in depth stats on who's been reading your work and keep track of your citations. 
+								<h1>Access over 1000+ study resources</h1>
+								<p class="pb-2">
+									Explore our collection of <a href="#">books</a>, <a href="#">course handouts</a>, <a href="#">examination past questions</a> and much more.
 								</p>
+								<div class="mt-2">
+									<a href="#" class="button p-3 success">Explore resources <i class="icofont-arrow-right"></i></a>
+								</div>
 							</div>
 						</div>	
 					</div>
@@ -338,17 +335,16 @@
 				<div class="row">
 					<div class="col-lg-5 col-md-5">
 						<figure class="side-image">
-							<img src="images/resources/research-avatar2.jpg" alt="">
+							<img src="images/resources/main-pic.png" alt="">
 						</figure>
 					</div>
 					<div class="col-lg-7 col-md-7">
 						<div class="verticle-center">
 							<div class="measure right">
-								<i class="icofont-connection"></i>
-								<h2>Connect with Your scientific Community</h2>
-								<p>
+								<h1>Connect with what drives your passion</h1>
+								<p class="pt-2">
 									<a href="#" title="">Engineering</a>
-									<a href="#" title="">mathamatic</a>
+									<a href="#" title="">mathamatics</a>
 									<a href="#" title="">biology</a>
 									<a href="#" title="">computer science</a>
 									<a href="#" title="">climate</a>
@@ -356,7 +352,8 @@
 									<a href="#" title="">Physics</a>
 									<a href="#" title="">sociology</a>
 									<a href="#" title="">chemistry</a>
-									<a href="#" title="">astrophysics</a>
+									<a href="#" title="">Music</a>
+                                    <a href="#" title="">philosophy</a>
 								</p>
 							</div>	
 						</div>
@@ -368,15 +365,15 @@
 	
 	<section>
 		<div class="gap mate-black low-opacity">
-			<div class="bg-image" style="background-image: url(images/resources/paralex-bg.jpg)" data-velocity=".2"></div>
+			<div class="bg-image" style="background-image: url(images/resources/widget-bg.jpg)" data-velocity=".2"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="welcome-parallax">
-							<i><img src="images/tv-icon.png" alt=""></i>
-							<h2>Advance your research</h2>
-							<span>Join our community of scientists.</span>
-							<a href="#" title="" class="main-btn" data-ripple="">Join Free Now</a>
+							<i><img src="images/resources/digital-library.png" alt=""></i>
+							<h2 style="font-weight:700;">Prepare for your Tests and Exams</h2>
+							<span>Get all the resources and help you need to succeed</span>
+							<a href="#" title="" class="main-btn" data-ripple="">Get Started Now</a>
 						</div>
 					</div>
 				</div>
@@ -390,69 +387,149 @@
 				<div class="row remove-ext30">
 					<div class="col-lg-12">
 						<div class="title">
-							<h1>Recent Events</h1>
-							<p>Our Recent News about the events.</p>
+							<h1>Find a Tutor that meets your needs</h1>
+							<p>Our highly qualified tutors are readily available to help to meet your academic goals</p>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="blog-grid">
-							<figure><img src="images/resources/blog.jpg" alt=""></figure>
-							<div class="blog-meta">
-								<div class="blog-head">
-									<ul class="postby">
-										<li>
-											<figure><img src="images/resources/postby1.jpg" alt=""></figure> 
-											<span>Saden joe</span>
-										</li>
-										<li><i class="icofont-heart"></i><span>1.3k</span></li>
-									</ul>
-									<a href="#" title="" class="date">06 Aug</a>
-									<h4 class="blog-title"><a href="#" title="">Oddo is coming to dubai in 2020</a></h4>
+					<div>
+						<div class="row col-xs-6 merged-10">
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<div class="members">
+									<figure><img alt="" src="images/resources/speak-1.jpg"></figure>
+									<span>Amy Watson</span>
+									<ins>Department of Sociology</ins>
+									<a data-ripple="" title="" href="#">view profile</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<div class="members">
+									<figure><img alt="" src="images/resources/speak-2.jpg"></figure>
+									<span>Muhammad A.</span>
+									<ins>Department of Astrlogy</ins>
+									<a data-ripple="" title="" href="#">view profile</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<div class="members">
+									<figure><img alt="" src="images/resources/speak-3.jpg"></figure>
+									<span>Sara Jean</span>
+									<ins>Department of Sociology</ins>
+									<a data-ripple="" title="" href="#">view profile</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<div class="members">
+									<figure><img alt="" src="images/resources/speak-4.jpg"></figure>
+									<span>William Jhon</span>
+									<ins>Department of Biology</ins>
+									<a data-ripple="" title="" href="#">view profile</a>
 								</div>
 							</div>
 						</div>
+						<div class="sp sp-bars"></div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="blog-grid">
-							<figure><img src="images/resources/blog2.jpg" alt=""></figure>
-							<div class="blog-meta">
-								<div class="blog-head">
-									<ul class="postby">
-										<li>
-											<figure><img src="images/resources/postby2.jpg" alt=""></figure> 
-											<span>Andrew</span>
-										</li>
-										<li><i class="icofont-heart"></i><span>1.3k</span></li>
-									</ul>
-									<a href="#" title="" class="date">08 Sep</a>
-									<h4 class="blog-title"><a href="#" title="">Coming soon event by Microsoft</a></h4>
+					<div class="main-wraper">
+						<div class="user-post">
+							<div class="friend-info">
+								<figure>
+									<i class="icofont-university"></i>
+								</figure>
+								<div class="friend-name">
+									<ins><a title="" href="time-line.html">Partner Institutions</a></ins>
+									<span><i class="icofont-runner-alt-1"></i> Trusted by state and private institutions</span>
 								</div>
+								<ul class="suggested-caro">
+									<li>
+										<figure><img src="images/resources/uni1.jpg" alt=""></figure>
+										<span>University of Bamenda</span>
+										<ins>13 Departments</ins>
+										<a href="#" title="" data-ripple="">view all programs and courses</a>
+									</li>
+									<li>
+										<figure><img src="images/resources/uni4.jpg" alt=""></figure>
+										<span>University of Yaounde I</span>
+										<ins>23 Departments</ins>
+										<a href="#" title="" data-ripple="">view all programs and courses</a>
+									</li>
+									<li>
+										<figure><img src="images/resources/uni3.jpg" alt=""></figure>
+										<span>StudPort University Institute</span>
+										<ins>43 Departments</ins>
+										<a href="#" title="" data-ripple="">view all programs and courses</a>
+									</li>
+									<li>
+										<figure><img src="images/resources/uni4.jpg" alt=""></figure>
+										<span>University of Douala</span>
+										<ins>42 Departments</ins>
+										<a href="#" title="" data-ripple="">view all programs and courses</a>
+									</li>
+								</ul>
 							</div>
 						</div>
+					</div><!-- suggested groups -->
+				</div>
+			</div>
+		</div>
+	</section><!-- Tutors -->
+	
+	<section>
+		<div class="gap no-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title">
+							<h1>Our Impact Story!</h1>
+							<p>What students and academic institutions have to say about us</p>
+						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="blog-grid">
-							<figure><img src="images/resources/blog3.jpg" alt=""></figure>
-							<div class="blog-meta">
-								<div class="blog-head">
-									<ul class="postby">
-										<li>
-											<figure><img src="images/resources/postby3.jpg" alt=""></figure> 
-											<span>Emma Lucy</span>
-										</li>
-										<li><i class="icofont-heart"></i><span>1.3k</span></li>
-									</ul>
-									<a href="#" title="" class="date">12 Oct</a>
-									<h4 class="blog-title"><a href="#" title="">This year Whatsapp event is ready in July</a></h4>
-								</div>
+					<div class="col-lg-12">
+						<div class="student-review">
+							<div class="review-item">
+								<figure><img src="images/resources/commenter-1.jpg" alt=""></figure>
+								<h6>Emma Watson</h6>
+								<span>Student of Botony</span>
+								<p>
+									"I am completely blown away. I have gotten at least 50 times the value from studentportal" 
+								</p>
+							</div>
+							<div class="review-item">
+								<figure><img src="images/resources/commenter-2.jpg" alt=""></figure>
+								<h6>John Doe</h6>
+								<span>Student of Chemistry</span>
+								<p>
+									"Studentportal is the most valuable business resource we have EVER purchased. Your company is truly upstanding and is behind its product 100%. You've saved our business!"	 
+								</p>
+							</div>
+							<div class="review-item">
+								<figure><img src="images/resources/commenter-3.jpg" alt=""></figure>
+								<h6>Eric Watson</h6>
+								<span>Student of Mathematics</span>
+								<p>
+									"This is simply unbelievable! Studentportal is awesome!" 
+								</p>
+							</div>
+							<div class="review-item">
+								<figure><img src="images/resources/commenter-1.jpg" alt=""></figure>
+								<h6>Emma Watson</h6>
+								<span>Student of Theatre Arts</span>
+								<p>
+									"I don't always clop, but when I do, it's because of studentportal. I am really satisfied with my studentportal. It's exactly what I've been looking for. This is simply unbelievable!" 
+								</p>
+							</div>
+							<div class="review-item">
+								<figure><img src="images/resources/commenter-2.jpg" alt=""></figure>
+								<h6>Emma Watson</h6>
+								<span>Student of Modern Letters</span>
+								<p>
+									"Studentportal has completely surpassed our expectations."	 
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section><!-- events -->
-	
+	</section>
 	<section>
 		<div class="gap no-top">
 			<div class="container">
@@ -461,8 +538,8 @@
 						<div class="newsletter-sec">
 							<figure><img src="images/news-icon.png" alt=""></figure>
 							<div class="leter-meta">
-								<span>our newsletter</span>
-								<h3>subscribe now</h3>
+								<span>Be the first to hear from us</span>
+								<h3>subscribe now!</h3>
 							</div>	
 							<form method="post">
 								<input type="text" placeholder="Email @">
@@ -474,66 +551,6 @@
 			</div>
 		</div>
 	</section>
-	
-	<section>
-		<div class="gap no-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title">
-							<h1>What our Students Have Today!</h1>
-							<p>Our Researchers have today now?</p>
-						</div>
-					</div>
-					<div class="col-lg-12">
-						<div class="student-review">
-							<div class="review-item">
-								<figure><img src="images/resources/commenter-1.jpg" alt=""></figure>
-								<h6>Emma Watson</h6>
-								<span>Student of Botony</span>
-								<p>
-									Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.	 
-								</p>
-							</div>
-							<div class="review-item">
-								<figure><img src="images/resources/commenter-2.jpg" alt=""></figure>
-								<h6>Emma Watson</h6>
-								<span>Student of Botony</span>
-								<p>
-									Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.	 
-								</p>
-							</div>
-							<div class="review-item">
-								<figure><img src="images/resources/commenter-3.jpg" alt=""></figure>
-								<h6>Emma Watson</h6>
-								<span>Student of Botony</span>
-								<p>
-									Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.	 
-								</p>
-							</div>
-							<div class="review-item">
-								<figure><img src="images/resources/commenter-1.jpg" alt=""></figure>
-								<h6>Emma Watson</h6>
-								<span>Student of Botony</span>
-								<p>
-									Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.	 
-								</p>
-							</div>
-							<div class="review-item">
-								<figure><img src="images/resources/commenter-2.jpg" alt=""></figure>
-								<h6>Emma Watson</h6>
-								<span>Student of Botony</span>
-								<p>
-									Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.	 
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
 	<footer>
 		<div class="gap">
 			<div class="bg-image" style="background-image: url(images/resources/footer-bg.png)"></div>
@@ -545,7 +562,7 @@
 							<p>Subscribe our newsletter for getting notifications and alerts</p>
 							<div class="contact-little">
 								<span><i class="icofont-phone-circle"></i> +237-672-0769-995</span>
-								<span><i class="icofont-email"></i> <a href="mailto: contact@studentportal-cm.com" class="__cf_email__" data-cfemail="422b2c242d02232927262f2b216c212d2f">[email&#160;protected]</a></span>
+								<span><i class="icofont-email"></i> <a href="mailto: contact@studentportal-cm.com" class="__cf_email__">contact@studentportal-cm.com</a></span>
 							</div>
 						</div>
 					</div>

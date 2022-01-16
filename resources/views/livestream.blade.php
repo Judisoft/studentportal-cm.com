@@ -124,7 +124,7 @@
 							<img src="images/resources/form-wizard-1.jpg" alt="">
 						</div>
 						<div class="popup-content">
-							<h2>Welcome to Socimo Live Room</h2>
+							<h2>Welcome to StudPort CM Live Room</h2>
 							<span>When do You Want To Go Live</span>
 							<div class="box-data">
 								<div class="starting-ask selected">
@@ -155,12 +155,12 @@
 							<div class="box-data">
 								<div class="starting-ask selected">
 									<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></i>
-									<h6>Check Video Came</h6>
-									<p>Chek your video came is activated or connect with your computer or not. <a href="#" title="">get help about this</a> </p>
+									<h6>Check Video Camera</h6>
+									<p>Chek your video camera is activated or connect with your computer or not. <a href="#" title="">get help about this</a> </p>
 								</div>
 								<div class="starting-ask">
 									<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mic"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></i>
-									<h6>Check Audio & Mic</h6>
+									<h6>Check Audio & Microphone</h6>
 									<p>Chek your Audio and microphone is activated or connect with your computer or not. <a href="#" title="">get help about this</a> </p>
 								</div>
 							</div>

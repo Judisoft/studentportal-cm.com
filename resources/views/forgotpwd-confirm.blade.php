@@ -26,7 +26,7 @@
 		<div class="row justify-content-md-center">
 			<div class="col-lg-8">
 				<div class="forget-password">
-					<figure class="logo"><img src="{{asset('images/logo.png')}}" alt=""><span>StudPort</span></figure>
+					<figure class="logo"><img src="{{asset('images/logo.png')}}" alt=""><span>StudPort CM</span></figure>
 					<div class="pass-form">
 						<h4>Request a Password Reset</h4>
                         <div id="notific">@include('notifications')</div>

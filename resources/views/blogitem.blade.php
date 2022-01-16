@@ -8,7 +8,7 @@
 					<div class="offset-lg-1 col-lg-10">
 						<div class="blog-detail">
 							<div class="blog-title">
-								<h2>Compare Prices Find The Best Computer Accessory</h2>
+								<h1 style="font-weight:700;">{{$blog->title}}</h1>
 							</div>
 							<div class="blog-details-meta">
 								<figure><img src="{{ URL::to('/uploads/blog/'.$blog->image) }}" alt=""></figure>

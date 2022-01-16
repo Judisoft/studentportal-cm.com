@@ -25,7 +25,7 @@
 	<div class="authtication bluesh high-opacity">
 		<div class="verticle-center">
 			<div class="welcome-note">
-				<div class="logo"><img src="images/logo.png" alt=""><span>StudPort</span></div>
+				<div class="logo"><img src="images/logo.png" alt=""><span>StudPort CM</span></div>
 				<h1>Welcome to StudentPortal</h1>
 				<p>
 					StudentPortal is a one and only plateform for students, teachers and Acdamic institutions. Every one can join this plateform free and share his/her ideas and research with everyone. 
@@ -46,15 +46,15 @@
 						<div class="col-lg-12"><h4>What type of user are you?</h4></div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
                             <small class="text-danger" id="first_name_error">{{ $errors->first('first_name', ':message') }}</small>
-							<input type="text" name="first_name" placeholder="First Name">
+							<input type="text" name="first_name" placeholder="First Name" value="{{old('first_name')}}">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
                             <small class="text-danger" id="last_name_error">{{ $errors->first('last_name', ':message') }}</small>
-							<input type="text" name="last_name" placeholder="Last Name">
+							<input type="text" name="last_name" placeholder="Last Name" value="{{old('last_name')}}">
 						</div>
 						<div class="col-lg-12">
                             <small class="text-danger" id="email_error">{{ $errors->first('email', ':message') }}</small>
-							<input type="text" name="email" placeholder="Email">
+							<input type="text" name="email" placeholder="Email" value="{{old('email')}}">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
                             <small class="text-danger" id="password_error">{{ $errors->first('password', ':message') }}</small>
@@ -85,21 +85,21 @@
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
                             <small class="text-danger" id="institution_error">{{ $errors->first('institution', ':message') }}</small>
-							<input type="text" name="institution" placeholder="Institution or Company">
+							<input type="text" name="institution" placeholder="Institution or Company" value="{{old('institution')}}">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
                             <small class="text-danger" id="department_error">{{ $errors->first('department', ':message') }}</small>
-							<input type="text" name="department" placeholder="Department">
+							<input type="text" name="department" placeholder="Department" value="{{old('department')}}">
 						</div>
 						<div class="col-lg-12">
-							<input type="text" name="designation" placeholder="Designation: e.g Dr, Prof, Eng, etc">
+							<input type="text" name="designation" placeholder="Designation: e.g Dr, Prof, Eng, etc" value="{{old('designation')}}">
 						</div>
 						<div class="col-lg-12">
 							<div class="gender">
                                 <small class="text-danger" id="gender_error">{{ $errors->first('gender', ':message') }}</small>
-							  <input type="radio" id="male" name="gender" value="male">
+							  <input type="radio" id="male" name="gender" value="m">
 							  <label for="male">Male</label>
-							  <input type="radio" id="female" name="gender" value="female">
+							  <input type="radio" id="female" name="gender" value="f">
 							  <label for="female">Female</label>
 							</div>	
 						</div>

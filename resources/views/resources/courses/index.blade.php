@@ -10,6 +10,12 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div id="page-contents" class="row merged20">
+							<div class="search-question">
+								<form method="post">
+									<input type="text" placeholder="Search Course">
+									<button type="submit"><i class="icofont-search-1"></i></button>
+								</form>
+							</div>
 							<div class="col-lg-9">
 								<div class="main-wraper">
 									<h4 class="main-title">Courses</h4>
@@ -262,6 +268,31 @@
 							<div class="col-lg-3">
 								<aside class="sidebar static right">
 									<div class="widget">
+										<h4 class="widget-title"><i class="icofont-flame-torch"></i> Popular Courses</h4>
+										<ul class="premium-course">
+											<li>
+												<figure>
+													<img src="{{asset('images/resources/course-5.jpg')}}" alt="">
+													<span class="tag">Free</span>
+												</figure>
+												<div class="vid-course">
+													<h5><a href="course-detail.html" title="">Wordpress Online video course</a></h5>
+													<ins class="price">$19/M</ins>
+												</div>
+											</li>
+											<li>
+												<figure>
+													<img src="{{asset('images/resources/course-3.jpg')}}" alt="">
+													<span class="tag">Premium</span>
+												</figure>
+												<div class="vid-course">
+													<h5><a href="course-detail.html" title="">Node JS Online video course</a></h5>
+													<ins class="price">$29/M</ins>
+												</div>
+											</li>
+										</ul>
+									</div><!-- popular courses -->
+									<div class="widget">
 										<h4 class="widget-title">Popular Books</h4>
 										<div class="popular-book">
 											<figure><img src="{{asset('images/resources/book10.jpg')}}" alt=""></figure>
@@ -289,28 +320,42 @@
 										</div>
 									</div>
 									<div class="widget">
-										<h4 class="widget-title">Ask Research Question?</h4>
-										<div class="ask-question">
-											<i class="icofont-question-circle"></i>
-											<h6>Ask questions in Q&A to get help from experts in your field.</h6>
-											<a class="ask-qst" href="#" title="">Ask a question</a>
-										</div>
-									</div>
+										<h4 class="widget-title">Suggested Communities</h4>
+										<div class="sug-caro">
+											<div class="friend-box">
+												<figure>
+													<img alt="" src="{{asset('images/resources/sidebar-info.jpg')}}">
+													<span>Members: 505K</span>
+												</figure>
+												<div class="frnd-meta">
+													<img alt="" src="{{asset('images/resources/frnd-figure2.jpg')}}">
+													<div class="frnd-name">
+														<a title="" href="#">Social Research</a>
+														<span>@biolabest</span>
+
+													</div>
+													<a class="main-btn2" href="#" title="">Join Community</a>
+												</div>
+											</div>
+											<div class="friend-box">
+												<figure>
+													<img alt="" src="{{asset('images/resources/sidebar-info2.jpg')}}">
+													<span>Members: 505K</span>
+												</figure>
+												<div class="frnd-meta">
+													<img alt="" src="{{asset('images/resources/frnd-figure3.jpg')}}">
+													<div class="frnd-name">
+														<a title="" href="#">Bio Labest Group</a>
+														<span>@biolabest</span>
+
+													</div>
+													<a class="main-btn2" href="#" title="">Join Community</a>
+												</div>
+											</div>
+										</div>	
+									</div><!-- suggested group -->
 									<div class="widget">
-										<h4 class="widget-title">Explor Events <a class="see-all" href="#" title="">See All</a></h4>
-										<div class="rec-events bg-purple">
-											<i class="icofont-gift"></i>
-											<h6><a title="" href="#">BZ University good night event in columbia</a></h6>
-											<img alt="" src="{{asset('images/clock.png')}}">
-										</div>
-										<div class="rec-events bg-blue">
-											<i class="icofont-microphone"></i>
-											<h6><a title="" href="#">The 3rd International Conference 2020</a></h6>
-											<img alt="" src="{{asset('images/clock.png')}}">
-										</div>
-									</div>
-									<div class="widget stick-widget">
-										<h4 class="widget-title">Who's follownig</h4>
+										<h4 class="widget-title">Course Contributors</h4>
 										<ul class="followers" >
 											<li>
 												<figure><img alt="" src="{{asset('images/resources/friend-avatar.jpg')}}"></figure>
@@ -363,6 +408,16 @@
 												</div>
 											</li>
 										</ul>	
+									</div>
+									<div class="widget stick-widget">
+										<h4 class="widget-title">Course Statics</h4>
+										<div class="statics-event">
+											<ol>
+												<li><span>125</span><i>Courses</i></li>
+												<li><span>536</span><i>Students</i></li>
+												<li><span>478</span><i>Teachers</i></li>
+											</ol>
+										</div>	
 									</div>
 								</aside>
 							</div>

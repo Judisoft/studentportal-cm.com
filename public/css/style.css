@@ -1941,8 +1941,14 @@ header.transparent .topbar{
     font-weight: 500;
     width: 100%;
 }
+.likes-btn{
+    color: rgb(8, 141, 205);
+    background-color: rgb(227, 240, 248);
+    border-radius:5px;
+    padding:5px;
+    border:3px solid rgb(8, 141, 205);
+}
 .we-video-info {
-    border-top: 1px solid #ede9e9;
     float: left;
     padding: 8px 0 0;
     position: relative;
@@ -2638,7 +2644,7 @@ ul.welcome-caro li.welcome-box figure img {
 }
 .suggested-caro li figure img,
 .friendz figure img{
-    border: 2px solid #088dcd;
+    border: 2px solid #eee;
     border-radius: 10px;
 	max-width: 80px;
 }
@@ -4324,41 +4330,7 @@ a.invite:hover,
     top: 4px;
     width: 40px;
 }
-/*--- pagination ---*/
-.load {
-    display: inline-block;
-    margin-top: 30px;
-    text-align: center;
-    width: 100%;
-}
-.pagination {
-    display: block;
-    margin-bottom: 0;
-    text-align: center;
-    width: 100%;
-}
-.pagination > li {
-    display: inline-block;
-    margin: 0 2px;
-}
-.pagination > li > a {
-    background: #deebf3 none repeat scroll 0 0;
-    border: 1px solid #c9d6de;
-    border-radius: 100%;
-    display: inline-block;
-    height: 35px;
-    line-height: 35px;
-    transition: all 0.2s linear 0s;
-    width: 35px;
-}
-.pagination > li > a:hover {
-    transform: scale(1.1);
-}
-.pagination > li > a.active {
-    background: rgba(8, 141, 205, 0.6) none repeat scroll 0 0;
-    border-color: #088dcd;
-    color: #fff;
-}
+
 /*--- research avatar ---*/
 .research-avatar {
     border: 1px solid #e0e0e0;
@@ -8338,6 +8310,23 @@ aside.sidebar .widget .activity-meta > i{
     color: #7d7f9a;
     background: #e5e4e9;
 }
+/* buttons */
+.stat-tools > button, .stat-tools > .box button {
+    background: #eae9ee;
+    border-radius: 4px;
+    border: none;
+    color: #82828e;
+    display: inline-block;
+    font-size: 13px;
+    padding: 5px 20px;
+    vertical-align: middle;
+    transition: all 0.2s linear 0s;
+}
+.stat-tools > button:hover,
+.stat-tools > button.active {
+    color: #7d7f9a;
+    background: #e5e4e9;
+}
 /*--- like hover emojies ---*/
 .Like {
   position: relative;
@@ -8346,6 +8335,14 @@ aside.sidebar .widget .activity-meta > i{
 .Like__link {
   cursor: pointer;
 }
+/*--- unlike hover emojies ---*/
+.Unlike {
+    position: relative;
+    display: inline-block;
+  }
+  .Unlike__link {
+    cursor: pointer;
+  }
 .box {
     display: inline-block;
     vertical-align: middle;

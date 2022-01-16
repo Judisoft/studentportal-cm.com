@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/color.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js'></script>
+	 <script src="https://widget.northeurope.cloudapp.azure.com:9443/v0.1.0/mobile-money-widget-mtn.js"></script>
     @yield('header_styles')
 </head>
 <body>
@@ -20,14 +23,7 @@
 </div><!-- page loader -->
 <div class="theme-layout">
 	<div class="responsive-header">
-		<div class="logo res"><img src="{{asset('images/logo.png')}}" alt=""><span></span></div>
-		<div class="user-avatar mobile">
-			<a href="profile.html" title="View Profile"><img alt="" src="{{asset('images/resources/user.jpg')}}"></a>
-			<div class="name">
-				<h4>Danial Cardos</h4>
-				<span>Ontario, Canada</span>
-			</div>
-		</div>
+		<div class="logo res"><img src="{{asset('images/logo.png')}}" alt=""><span>StudPort</span></div>
 		<div class="right-compact">
 			<div class="sidemenu">
 				<i><svg id="side-menu2" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></i>
@@ -116,7 +112,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="index-2.html" title="Home" data-toggle="tooltip">
+					<a href="{{route('home')}}" title="Home" data-toggle="tooltip">
 						<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></i>
 					</a>
 				</li>
@@ -127,15 +123,10 @@
 					<span></span>
 				</li>
 				<li>
-					<a class="mesg-notif" href="#" title="Notifications" data-toggle="tooltip">
+					<a class="mesg-notif" href="{{URL::to('user/notifications')}}" title="Notifications" data-toggle="tooltip">
 						<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></i>
 					</a>
 					<span></span>
-				</li>
-				<li>
-					<a class="create" href="#" title="Add New" data-toggle="tooltip">
-						<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></i>
-					</a>
 				</li>
 				<li>
 					<a href="#" title="">
@@ -143,26 +134,26 @@
 						</i>
 					</a>
 					<ul class="dropdown">
-						<li><a href="profile.html" title=""><i class="icofont-user-alt-3"></i> Your Profile</a></li>
-						<li><a href="add-new-course.html" title=""><i class="icofont-plus"></i> New Course</a></li>
-						<li><a class="invite-new" href="#" title=""><i class="icofont-brand-slideshare"></i> Invite Collegue</a></li>
-						<li><a href="pay-out.html" title=""><i class="icofont-price"></i> Payout</a></li>
-						<li><a href="price-plan.html" title=""><i class="icofont-flash"></i> Upgrade</a></li>
-						<li><a href="help-faq.html" title=""><i class="icofont-question-circle"></i> Help</a></li>
-						<li><a href="settings.html" title=""><i class="icofont-gear"></i> Setting</a></li>
-						<li><a href="privacy-n-policy.html" title=""><i class="icofont-notepad"></i> Privacy</a></li>
+						<li><a href="{{route('my-account')}}" title=""><i class="icofont-user-alt-3"></i> Your Profile</a></li>
+						<li><a href="{{URL::to('resources/courses/create')}}" title=""><i class="icofont-plus"></i> New Course</a></li>
+						<li><a href="{{URL::to('invitations/index')}}" title=""><i class="icofont-brand-slideshare"></i> Invite Friends</a></li>
+						<li><a href="{{URL::to('marketplace/payout')}}" title=""><i class="icofont-price"></i> Payout</a></li>
+						<li><a href="{{URL::to('marketplace/pricing-plan')}}" title=""><i class="icofont-flash"></i> Upgrade</a></li>
+						<li><a href="{{URL::to('help')}}" title=""><i class="icofont-question-circle"></i> Help</a></li>
+						<li><a href="{{URL::to('user/settings')}}" title=""><i class="icofont-gear"></i> Setting</a></li>
+						<li><a href="{{URL::to('privacy')}}" title=""><i class="icofont-notepad"></i> Privacy</a></li>
 						<li><a class="dark-mod" href="#" title=""><i class="icofont-moon"></i> Dark Mode</a></li>
 						<li class="logout"><a href="{{route('logout')}}" title=""><i class="icofont-power"></i> Logout</a></li>
 					</ul>
 				</li>
 			</ul>
 		</div>
-		
+		<div id="notific">@include('notifications')</div>
 	</header><!-- header -->
 	
 	@extends('layouts/left-menu')
     <section>
-		<div class="white-bg">
+		<div style="background-color: rgba(8, 141, 205, 0.09);">
 			<div class="container-fluid">
 				<div class="menu-caro">
 					<div class="row">
@@ -182,15 +173,14 @@
 									</a>
 								</div>
 								<div class="link-item">
-									<a href="{{URL::to('resources/videos')}}" title="">
+									<a href="{{URL::to('questions')}}" title="">
 										<i class="">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-										</i>
-										<p>Videos</p>
+											<svg class="feather feather-message-square" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg" id="ab2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" style="stroke-dasharray: 68, 88; stroke-dashoffset: 0;"/></svg>										</i>
+										<p>Q&A Portal</p>
 									</a>
 								</div>
 								<div class="link-item">
-									<a href="{{URL::to('resources/books')}}" title="">
+									<a href="{{URL::to('resources/courses')}}" title="">
 										<i class="">
 											<svg class="feather feather-airplay" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg></i>
 										<p>Courses</p>
@@ -204,13 +194,13 @@
 									</a>
 								</div>
 								<div class="link-item">
-									<a href="{{route('blog')}}" title="">
+									<a href="{{URL::to('examinations')}}" title="">
 										<i class=""><svg class="feather feather-layout" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><rect ry="2" rx="2" height="18" width="18" y="3" x="3"/><line y2="9" x2="21" y1="9" x1="3"/><line y2="9" x2="9" y1="21" x1="9"/></svg></i>
-										<p>Blog</p>
+										<p>Examinations</p>
 									</a>
 								</div>
 								<div class="link-item">
-									<a href="groups.html" title="">
+									<a href="{{URL::to('collaboration/groups')}}" title="">
 										<i class="">
 											<svg class="feather feather-users" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle r="4" cy="7" cx="9"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 										</i>
@@ -221,14 +211,7 @@
 						</div>
 						<div class="col-lg-2">
 							<div class="user-inf">
-								<div class="folowerz">Followers: 204</div>
-								<ul class="stars">
-									<li><i class="icofont-star"></i></li>
-									<li><i class="icofont-star"></i></li>
-									<li><i class="icofont-star"></i></li>
-									<li><i class="icofont-star"></i></li>
-									<li><i class="icofont-star"></i></li>
-								</ul>
+								<div class="folowerz"><i class="icofont-help"></i>Need Help?</div>
 							</div>	
 						</div>
 					</div>
@@ -248,8 +231,8 @@
 							<a href="#" title=""><img src="images/logo.png" alt=""></a>
 							<p>Subscribe our newsletter for getting notifications and alerts</p>
 							<div class="contact-little">
-								<span><i class="icofont-phone-circle"></i> +1-235-099-34</span>
-								<span><i class="icofont-email"></i> <a href="http://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e777078715e7f757b7a73777d307d7173">[email&#160;protected]</a></span>
+								<span><i class="icofont-phone-circle"></i> (+237)-672-076-995</span>
+								<span><i class="icofont-email"></i> <a href="mailto:contact@studentportal-cm.com">contact@studentportal-cm.com</a></span>
 							</div>
 						</div>
 					</div>
@@ -363,7 +346,26 @@
 			</div>
 		</div>
 	</div><!-- send message popup -->
-	
+	<div class="new-question-popup">
+		<div class="popup">
+			<span class="popup-closed"><i class="icofont-close"></i></span>`
+			<div class="popup-meta">
+				<div class="popup-head">
+					<h5> Create New Group</h5>
+				</div>
+				<div class="post-new">
+					<form action="{{action('GroupsController@store')}}" method="post" class="c-form">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+						<small class="text-danger">{{ $errors->first('title', ':message') }}</small>
+						<input type="text" name="title" placeholder="Group name">
+						<small class="text-danger">{{ $errors->first('description', ':message') }}</small>
+						<textarea type="text" name="description" placeholder="Add a brief description of the group"></textarea>
+						<button type="submit" class="main-btn">Create Group</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div><!-- ask question -->
 	<div class="side-slide">
 		<span class="popup-closed"><i class="icofont-close"></i></span>
 		<div class="slide-meta">
@@ -412,7 +414,7 @@
 							</div>
 						</li>
 					</ul>
-					<a href="#" title="" class="main-btn" data-ripple="">view all</a>
+					<a href="{{URL::to('user/messages')}}" title="" class="main-btn" data-ripple="">view all</a>
 				</div>
 				<div class="tab-pane fade" id="notifications">
 					<h4><i class="icofont-bell-alt"></i> notifications</h4>
@@ -453,130 +455,11 @@
 							</div>
 						</li>
 					</ul>
-					<a href="#" title="" class="main-btn" data-ripple="">view all</a>
+					<a href="{{URL::to('user/notifications')}}" title="" class="main-btn" data-ripple="">view all</a>
 				</div>
 			</div>
 		</div>
 	</div><!-- side slide message & popup -->
-	
-	<div class="post-new-popup">
-		<div class="popup" style="width: 800px;">
-			<span class="popup-closed"><i class="icofont-close"></i></span>
-			<div class="popup-meta">
-				<div class="popup-head">
-					<h5><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></i>Create New Post</h5>
-				</div>
-				<div class="post-new">
-					<div class="post-newmeta">
-						<ul class="post-categoroes">
-							<li><i class="icofont-camera"></i> Photo / Video</li>
-							<li><i class="icofont-google-map"></i> Post Location</li>
-							<li><i class="icofont-file-gif"></i> Post Gif</li>
-							<li><i class="icofont-ui-tag"></i> Tag to Friend</li>
-							<li><i class="icofont-users"></i> Share in Group</li>
-							<li><i class="icofont-link"></i> Share Link</li>
-							<li><i class="icofont-video-cam"></i> Go Live</li>
-							<li><i class="icofont-sale-discount"></i> Post Online Course</li>
-							<li><i class="icofont-read-book"></i> Post A Book</li>
-							<li><i class="icofont-globe"></i> Post an Ad</li>
-						</ul>
-						<form method="post" class="dropzone" action="http://wpkixx.com/upload-target">
-							<div class="fallback">
-								<input name="file" type="file" multiple />
-							</div>
-						</form>
-					</div>	
-					<form method="post" class="c-form">
-						<textarea id="emojionearea1" placeholder="What's On Your Mind?"></textarea>
-						<div class="activity-post">
-							<div class="checkbox">
-								<input type="checkbox" id="checkbox" checked>
-								<label for="checkbox"><span>Activity Feed</span></label>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="checkbox2" checked>
-								<label for="checkbox2"><span>My Story</span></label>
-							</div>
-						</div>
-						<div class="select-box">
-							<div class="select-box__current" tabindex="1">
-								<div class="select-box__value"><input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked" />
-									<p class="select-box__input-text"><i class="icofont-globe-alt"></i> Public</p>
-								</div>
-								<div class="select-box__value"><input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked" />
-									<p class="select-box__input-text"><i class="icofont-lock"></i> Private</p>
-								</div>
-								<div class="select-box__value"><input class="select-box__input" type="radio" id="2" value="3" name="Ben" checked="checked" />
-									<p class="select-box__input-text"><i class="icofont-user"></i> Specific Friend</p>
-								</div>
-								<div class="select-box__value"><input class="select-box__input" type="radio" id="3" value="4" name="Ben" checked="checked" />
-									<p class="select-box__input-text"><i class="icofont-star"></i> Only Friends</p>
-								</div>
-								<div class="select-box__value"><input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked" />
-									<p class="select-box__input-text"><i class="icofont-users-alt-3"></i> Joined Groups</p>
-								</div>
-								<img class="select-box__icon" src="{{asset('images/arrow-down.svg')}}" alt="Arrow Icon" aria-hidden="true" />
-							</div>
-							<ul class="select-box__list">
-								<li><label class="select-box__option" for="0"><i class="icofont-globe-alt"></i> Public</label></li>
-								<li><label class="select-box__option" for="1"><i class="icofont-lock"></i> Private</label></li>
-								<li><label class="select-box__option" for="2"><i class="icofont-user"></i> Specific Friend</label></li>
-								<li><label class="select-box__option" for="3"><i class="icofont-star"></i> Only Friends</label></li>
-								<li><label class="select-box__option" for="4"><i class="icofont-users-alt-3"></i> Joined Groups</label></li>
-							</ul>
-						</div>
-						<input class="schedule-btn" type="text" id="datetimepicker" readonly>
-						<input type="text" placeholder="https://www.youtube.com/watch?v=vgvsuiFlA-Y&amp;t=56s">
-						<button type="submit" class="main-btn">Publish</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div><!-- New post popup -->
-	
-	<div class="new-question-popup">
-		<div class="popup">
-			<span class="popup-closed"><i class="icofont-close"></i></span>
-			<div class="popup-meta">
-				<div class="popup-head">
-					<h5><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></i> Ask Question</h5>
-				</div>
-				<div class="post-new">
-					<form method="post" class="c-form">
-						
-						<input type="text" placeholder="Question Title">
-						<textarea placeholder="Write Question"></textarea>
-						
-						<select>
-							<option>Select Your Question Type</option>
-							<option>Article</option>
-							<option>Book</option>
-							<option>Chapter</option>
-							<option>Code</option>
-							<option>conference Paper</option>
-							<option>Cover Page</option>
-							<option>Data</option>
-							<option>Exprement Finding</option>
-							<option>Method</option>
-							<option>Poster</option>
-							<option>Preprint</option>
-							<option>Technicial Report</option>
-							<option>Thesis</option>
-							<option>Research</option>
-						</select>
-						<div class="uploadimage">
-							<i class="icofont-eye-alt-alt"></i>
-							<label class="fileContainer">
-								<input type="file">Upload File
-							</label>
-						</div>
-						
-						<button type="submit" class="main-btn">Post</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div><!-- ask question -->
 
 	<div class="share-wraper">
 		<div class="share-options">
@@ -630,6 +513,7 @@
 			<button type="submit" class="main-btn">Publish</button>
 		</div>
 	</div><!-- share post -->
+	
 	
 	<div class="cart-product">
 		<a href="product-cart.html" title="View Cart" data-toggle="tooltip"><i class="icofont-cart-alt"></i></a>
@@ -1190,9 +1074,11 @@
 		</div>
     </div><!-- The Scrolling Modal image with comment -->
 </div>
-	<script src="{{asset('js/main.min.js')}}"></script><!-- vendors merged files -->
-	<script src="{{asset('js/date-time.js')}}"></script>
-	<script src="{{asset('js/script.js')}}"></script><!-- custom scripts -->
-    @yield('footer_scripts')
+<script src="{{asset('js/main.min.js')}}"></script><!-- vendors merged files -->
+<script src="{{asset('js/date-time.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script><!-- custom scripts -->
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script src="{{ asset('vendors/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}" type="text/javascript"></script>
+@yield('footer_scripts')
 </body>	
 </html>

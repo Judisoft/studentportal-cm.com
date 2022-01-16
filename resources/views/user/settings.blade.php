@@ -30,7 +30,23 @@
 											</p>
 											<h6>Basic Profile</h6>
 											<p>Add information about yourself</p>
-											<form>
+											{!! Form::model($user, ['url' => URL::to('my-account'), 'method' => 'put', 'enctype'=>"multipart/form-data"]) !!}
+                            					{{ csrf_field() }}
+												<div class="university-tag">
+													<figure>
+														@if($user->pic)
+															<img src="{{ $user->pic }}" alt="img" class="img-fluid"/>
+														@else
+															<img src="{{ asset('images/no_avatar.png') }}" alt="..." class="img-fluid"/>
+														@endif
+													</figure>
+												</div>
+												<div class="uploadimage p-3">
+													<i class="icofont-image"></i>
+													<label class="fileContainer">
+														<input type="file" id="pic" name="pic">Update profile picture
+													</label>
+												</div>
 												<fieldset class="row merged-10">
 													<div class="mb-4 col-lg-6">
 														<input class="uk-input" name="first_name" type="text" placeholder="First Name" value="{{$user->first_name}}">
@@ -43,6 +59,7 @@
 													</div>
                                                     <div class="mb-4 col-lg-6">
 														<input class="uk-input" name="telephone" type="text" placeholder="Telephone" value="{{$user->telephone}}">
+														<small class="text-danger">{{ $errors->first('telephone', ':message') }}</small>
 													</div>
                                                     <div class="mb-4 col-lg-6">
 														<input class="uk-input" name="institution" type="text" placeholder="Institution/Company" value="{{$user->institution}}">
@@ -51,62 +68,62 @@
 														<input class="uk-input" name="department" type="text" placeholder="Department" value="{{$user->department}}">
 													</div>
                                                     <div class="uk-margin col-lg-12 mb-4">
-                                                        <select class="uk-select">
+                                                        <select class="uk-select" name="country">
                                                             @foreach($countries as $country)
                                                             <option value="{{$user->country}}" selected>{{$country->name}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
                                                     <div class="mb-4 col-lg-6">
-														<input class="uk-input" name="city" type="text" placeholder="City" value="{{$user->city}}">
+														<input class="uk-input" name="city" type="text" placeholder="City" name="city" value="{{$user->city}}">
 													</div>
 													<div class="mb-4 col-lg-6">
-														<input class="uk-input" name="address" type="text" placeholder="address" value="{{$user->address}}">
+														<input class="uk-input" name="address" type="text" placeholder="address" name="address" value="{{$user->address}}">
 													</div>
                                                     <div class="mb-4 col-lg-12">
-														<input class="uk-input" rows="4" placeholder="Postal address" value="{{$user->postal}}">
+														<input class="uk-input" rows="4" placeholder="Postal address" name="postal" value="{{$user->postal}}">
 													</div>
 													<div class="mb-4 col-lg-12">
-														<input class="uk-input" name="designation" type="text" placeholder="Your Designation">
+														<input class="uk-input" name="designation" type="text" name="designation" placeholder="Your Designation" value="{{$user->postal}}">
 														<em>Add a professional headline like, "Engineer" or "Architect."</em>
 													</div>
 													<div class="mb-4 col-lg-12">
-														<textarea class="uk-textarea" rows="4" placeholder="Your Bio" value="{{$user->bio}}"></textarea>
+														<textarea type="text" class="uk-textarea" rows=4 placeholder="Your Bio" name="bio">{{ $user->bio }}</textarea>
                                                         <em>Tell us something about yourself</em>
 													</div>
                                                     <div class="mb-4 col-lg-6">
 														<input class="uk-input" name="dob" type="date" placeholder="DOB" value="{{$user->dob}}">
 													</div>
 													<div class="mb-4 mt-3 col-lg-6">
-                                                        <label><input class="uk-radio" type="radio" name="m" @if($user->gender == 'm')  checked @endif> Male</label>
-                                                        <label><input class="uk-radio" type="radio" name="f" @if($user->gender == 'f') checked @endif>  Female</label>
+                                                        <label><input class="uk-radio" type="radio" name="gender" value="m" @if($user->gender == 'm')  checked @endif> Male</label>
+                                                        <label><input class="uk-radio" type="radio" name="gender" value="f" @if($user->gender == 'f') checked @endif>  Female</label>
 													</div>
 													<h6 class="mb-4 mt-2">Social Profile Links</h6>
 													<div class="mb-4">
 														<div class="social-links">
 															<span>http://facebook.com/</span>
-															<input type="text" placeholder="Facebook Profile" value="{{$user->facebook}}">
+															<input type="text" placeholder="Facebook Profile" name="facebook" value="{{$user->facebook}}">
 															<em>Add your Facebook username (e.g. johndoe).</em>
 														</div>
 													</div>
 													<div class="mb-4">
 														<div class="social-links">
 															<span>http://twitter.com/</span>
-															<input type="text" placeholder="Twitter Profile" value="{{$user->twitter}}">
+															<input type="text" placeholder="Twitter Profile" name="twitter" value="{{$user->twitter}}">
 															<em>Add your Facebook username (e.g. johndoe).</em>
 														</div>
 													</div>
 													<div class="mb-4">
 														<div class="social-links">
 															<span>http://www.instagram.com/</span>
-															<input type="text" placeholder="Instagram Profile" value="{{$user->instagram}}">
+															<input type="text" placeholder="Instagram Profile" name="instagram" value="{{$user->instagram}}">
 															<em>Add your Facebook username (e.g. johndoe).</em>
 														</div>
 													</div>
 													<div class="mb-4">
 														<div class="social-links">
 															<span>http://www.youtube.com/</span>
-															<input type="text" placeholder="Youtube Channel" value="{{$user->youtube}}">
+															<input type="text" placeholder="Youtube Channel" name="youtube" value="{{$user->youtube}}">
 															<em>Add your Facebook username (e.g. johndoe).</em>
 														</div>
 													</div>
@@ -114,7 +131,7 @@
 														<button type="submit" class="button primary circle">Save Changes</button>
 													</div>	
 												</fieldset>
-											</form>
+											{!!  Form::close()  !!}
 										</div>
 									</div>
                                 </div>

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <title>Josh Admin</title>
+    <title>StudPort CM</title>
     <!-- Jquery Framework -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!-- API 2 -->
@@ -16,5 +16,4 @@
 <body>
     @yield('content')
 </body>
-
 </html>

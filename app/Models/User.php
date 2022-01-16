@@ -4,6 +4,8 @@ use Cartalyst\Sentinel\Users\EloquentUser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Cviebrock\EloquentTaggable\Taggable;
 use Str;
+use App\Like;
+use App\VoteAnswer;
 
 class User extends EloquentUser
 {
@@ -48,5 +50,14 @@ class User extends EloquentUser
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    public function vote_answers()
+    {
+        return $this->hasMany(VoteAnswer::class);
     }
 }
