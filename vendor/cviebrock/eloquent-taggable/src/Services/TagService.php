@@ -39,6 +39,19 @@ class TagService
     }
 
     /**
+     * Find existing tags by their IDs.
+     *
+     * @param int|int[] $ids
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function findByIds($ids): Collection
+    {
+        $ids = (array) $ids;
+        return $this->tagModel::find($ids);
+    }
+
+    /**
      * Find an existing tag (or create a new one) by name.
      *
      * @param string $tagName
@@ -280,11 +293,11 @@ class TagService
         $sql .= ' GROUP BY t.tag_id, t.name, t.normalized, t.created_at, t.updated_at';
 
         if ($minCount > 1) {
-            $sql .= ' HAVING taggable_count >= ?';
+            $sql .= ' HAVING COUNT(t.tag_id) >= ?';
             $bindings[] = $minCount;
         }
 
-        $sql .= ' ORDER BY taggable_count DESC';
+        $sql .= ' ORDER BY COUNT(t.tag_id) DESC';
 
         if ($limit) {
             $sql .= ' LIMIT ?';

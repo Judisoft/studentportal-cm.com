@@ -1,5 +1,30 @@
 # Changelog
 
+## 8.0.3 - 30-Mar-2021
+
+- fixes for Postgres(#123 and #124, thanks @0528Makoto)
+
+
+## 8.0.2 - 04-Jan-2021
+
+- add `tagById()`, `untagById()`, and `retagById()` methods (suggested by #110)
+- fix for handling accented characters in normalized column (#116, thanks @pierrocknroll)
+- update test internals to use static assertions
+- update automated testing to use MySQL instead of sqlite (to catch issues like #116)
+
+
+## 8.0.1 - 02-Dec-2020
+
+- support PHP 8.0
+- move automated testing from travis-ci to Github actions
+- clean up some third-party tools and badges
+
+
+## 8.0.0 - 10-Sep-2020
+
+- Laravel 8.0 support
+
+
 ## 7.0.0 - 04-Mar-2020
 
 - Laravel 7.0 support

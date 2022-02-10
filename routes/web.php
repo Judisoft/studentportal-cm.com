@@ -401,3 +401,7 @@ Route::delete('/questions/{question}/likes', 'QuestionsLikeController@destroy')-
 //Answer Votes
 Route::post('/questionitem/{answer}/vote_answers', 'VoteAnswersController@store')->name('answers.vote');
 Route::delete('/questionitem/{answer}/vote_answers', 'VoteAnswersController@destroy')->name('answers.vote');
+
+// Newslette
+
+Route::post('/', 'NewsletterController@newsletter')->name('newsletter');

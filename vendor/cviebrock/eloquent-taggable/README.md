@@ -1,17 +1,17 @@
 # Eloquent-Taggable
 
-Easily add the ability to tag your Eloquent models in Laravel 6.
+Easily add the ability to tag your Eloquent models in Laravel.
 
-> **NOTE**: These instructions are for Laravel 6.0.  If you are using Laravel 5.8, please
-> see the [previous version's docs](https://github.com/cviebrock/eloquent-taggable/tree/3.5).
+> **NOTE**: These instructions are for the latest version of Laravel.  
+> If you are using an older version, please install a version of the package
+> that [correlates to your Laravel version](#installation).
 
-[![Build Status](https://travis-ci.org/cviebrock/eloquent-taggable.svg?branch=master&format=flat)](https://travis-ci.org/cviebrock/eloquent-taggable)
+[![Build Status](https://github.com/cviebrock/eloquent-taggable/workflows/tests/badge.svg?branch=master)](https://github.com/cviebrock/eloquent-taggable/actions)
 [![Total Downloads](https://poser.pugx.org/cviebrock/eloquent-taggable/downloads?format=flat)](https://packagist.org/packages/cviebrock/eloquent-taggable)
 [![Latest Stable Version](https://poser.pugx.org/cviebrock/eloquent-taggable/v/stable?format=flat)](https://packagist.org/packages/cviebrock/eloquent-taggable)
 [![Latest Unstable Version](https://poser.pugx.org/cviebrock/eloquent-taggable/v/unstable?format=flat)](https://packagist.org/packages/cviebrock/eloquent-taggable)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cviebrock/eloquent-taggable/badges/quality-score.png?format=flat)](https://scrutinizer-ci.com/g/cviebrock/eloquent-taggable)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/9e1bb86e-2659-4123-9b6f-89370ef1483d/mini.png)](https://insight.sensiolabs.com/projects/9e1bb86e-2659-4123-9b6f-89370ef1483d)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![License](https://img.shields.io/packagist/l/cviebrock/eloquent-taggable)](LICENSE.md)
 
 
 * [Installation](#installation)
@@ -35,8 +35,9 @@ version should match the Laravel version.
 
 | Laravel Version | Package Version |
 |:---------------:|:---------------:|
-|       7.0       |     7.0.*       |
-|       6.0       |     6.0.*       |
+|       8.0       |     ^8.0        |
+|       7.0       |     ^7.0        |
+|       6.0       |     ^6.0        |
 |       5.8       |     3.5.*       |
 |       5.7       |     3.4.*       |
 |       5.6       |     3.3.*       |
@@ -101,10 +102,14 @@ class MyModel extends Eloquent
 }
 ```
 
+> **NOTE**: Make sure your model doesn't have an attribute and/or column in its database table called `tags`; the trait will add that attribute for you.)
+
 That's it ... your model is now "taggable"!
 
 
 ## Usage
+
+### Adding and Removing Tags from a Model
 
 Tag your models with the `tag()` method:
 
@@ -146,6 +151,51 @@ $model->retag('Etrog,Fig,Grape');
 
 // $model is now just tagged with "Etrog", "Fig", and "Grape"
 ```
+
+If you have an array of Tag model IDs (primary keys) already, 
+you can tag a model using those IDs instead of the tag names:
+
+```php
+// assuming no other tags exist yet ...
+$model->tag('Apple','Banana','Cherry','Durian');
+
+$newModel->tagById([1,3]);
+// ... $newModel is tagged with "Apple" and "Cherry"
+```
+
+Similarly, you can untag by ID as well:
+
+```php
+// assuming no other tags exist yet ...
+$model->tag('Apple','Banana','Cherry','Durian');
+
+$model->untagById([1,3]);
+// ... $model is now only tagged with "Banana" and "Durian"
+```
+
+Tagging/untagging/retagging by ID is useful if you have, for instance, a
+form with a multi-select dropdown or a list of checkboxes of all tags, e.g.:
+
+```html
+<select name="tags" multiple>
+  <option value="1">Apple</option>
+  <option value="2">Banana</option>
+  <option value="3">Cherry</option>
+  ... etc.
+</select>
+```
+
+When the form submits, the data sent to your controller is an array
+of all the selected tag IDs.  It is then easy to update the model 
+accordingly with the selected tags:
+
+```php
+$tags = $request->input('tags');
+$model->retagById($tags);
+```
+
+
+### Working with a Model's Tags
 
 You can get the array of all tags (technically, an Eloquent Collection):
 
@@ -329,9 +379,10 @@ Model::allTagsList();
 Model::allTagModels();
 ```
 
+
 ## Events
 
-You can create a listener to handle when a model is Tagged:
+You can create a listener to handle when a model is tagged:
 
 ```php
 // in your EventServiceProvider 

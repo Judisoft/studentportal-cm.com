@@ -231,7 +231,7 @@
 						<div class="info-sec">
 							<i class="icofont-support-faq"></i>
 							<div>
-								<h6>Learn from experienced teachers</h6>
+								<h6>Learn from experienced instructors</h6>
 								<p>Ask questions and receive answers from professional experts and receive the support you need.</p>
 							</div>
 						</div>
@@ -270,7 +270,7 @@
 									<div class="funfact-counter">
 										<i class="icofont-teacher"></i>
 										<span class="counter">599</span>
-										<em>Teachers</em>
+										<em>Instructors</em>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
@@ -313,7 +313,7 @@
 								<p class="pb-2">
 									Explore our collection of <a href="#">books</a>, <a href="#">course handouts</a>, <a href="#">examination past questions</a> and much more.
 								</p>
-								<div class="mt-2">
+								<div class="mt-2 mb-5">
 									<a href="#" class="button p-3 success">Explore resources <i class="icofont-arrow-right"></i></a>
 								</div>
 							</div>
@@ -333,12 +333,12 @@
 		<div class="gap">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-5 col-md-5">
+					<div class="col-lg-6 col-md-6">
 						<figure class="side-image">
 							<img src="images/resources/main-pic.png" alt="">
 						</figure>
 					</div>
-					<div class="col-lg-7 col-md-7">
+					<div class="col-lg-6 col-md-6">
 						<div class="verticle-center">
 							<div class="measure right">
 								<h1>Connect with what drives your passion</h1>
@@ -352,9 +352,21 @@
 									<a href="#" title="">Physics</a>
 									<a href="#" title="">sociology</a>
 									<a href="#" title="">chemistry</a>
-									<a href="#" title="">Music</a>
-                                    <a href="#" title="">philosophy</a>
+									<a href="#" title="">music</a>
+                                    <a href="#" title="">anthropology</a>
+									<a href="#" title="">linguistics</a>
+									<a href="#" title="">finance</a>
+									<a href="#" title="">management</a>
+									<a href="#" title="">politics</a>
+									<a href="#" title="">astrology</a>
+									<a href="#" title="">telecommunications</a>
+									<a href="#" title="">law</a>
+									<a href="#" title="">culture</a>
+									<a href="#" title="">business</a>
+									<a href="#" title="">marketing</a>
+									<a href="#" title="" class="bg-info text-light">explore more <span class="icofont-plus"></span></a>
 								</p>
+
 							</div>	
 						</div>
 					</div>
@@ -364,13 +376,12 @@
 	</section>
 	
 	<section>
-		<div class="gap mate-black low-opacity">
-			<div class="bg-image" style="background-image: url(images/resources/widget-bg.jpg)" data-velocity=".2"></div>
+		<div class="gap mate-black high-opacity">
+			<div class="bg-image" style="background-image: url(images/resources/post-detail.jpg)" data-velocity=".2"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="welcome-parallax">
-							<i><img src="images/resources/digital-library.png" alt=""></i>
 							<h2 style="font-weight:700;">Prepare for your Tests and Exams</h2>
 							<span>Get all the resources and help you need to succeed</span>
 							<a href="#" title="" class="main-btn" data-ripple="">Get Started Now</a>
@@ -387,7 +398,7 @@
 				<div class="row remove-ext30">
 					<div class="col-lg-12">
 						<div class="title">
-							<h1>Find a Tutor that meets your needs</h1>
+							<h1>Find an instructor that meets your needs</h1>
 							<p>Our highly qualified tutors are readily available to help to meet your academic goals</p>
 						</div>
 					</div>
@@ -535,15 +546,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
+						@include('notifications')
 						<div class="newsletter-sec">
 							<figure><img src="images/news-icon.png" alt=""></figure>
 							<div class="leter-meta">
 								<span>Be the first to hear from us</span>
 								<h3>subscribe now!</h3>
 							</div>	
-							<form method="post">
-								<input type="text" placeholder="Email @">
+							<form action="{{ route('newsletter') }}" method="post">
+								<input type="email" name="email"  placeholder="Email @">
+								@csrf
 								<button type="submit" class="main-btn" data-ripple=""><i class="icofont-paper-plane"></i></button>
+								<div class="mt-2 rounded"><small class="text-danger text-center">{{ $errors->first('email', ':message') }}</small></div>
 							</form>
 						</div>
 					</div>

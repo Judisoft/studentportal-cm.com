@@ -4,33 +4,18 @@
 @stop
 
 @section('content')
-	<section>
-    	<div class="gap no-gap bluesh high-opacity">
-			<div style="background-image: url(/../images/resources/top-bg.jpg)" class="bg-image"></div>
-	        <div class="container">
-	        	<div class="row">
-	        		<div class="col-lg-12">
-	        			<div class="post-subject">
-			            <h1>Public Q/A</h1>
-			            <p> Home / public Q/A</p>
-			            </div>
-		            </div>
-	            </div>
-	        </div>
-    	</div>
-    </section>
     <section>
-		<div class="gap">
+		<div class="no-gap">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div id="page-contents" class="row merged20">
 							<div class="col-lg-9">
-								<h4 class="p-2"><a title="" href="{{URL::to('academia/my-questions/create')}}" class="button primary" style="text-decoration:none;">Ask Question</a></h4>
-								@foreach($questions as $question)
+								<h4 class="p-3"><a title="" href="{{URL::to('academia/my-questions/create')}}" class="button primary" style="text-decoration:none;">Ask Question</a></h4>
+								@forelse($questions as $question)
 									<div class="main-wraper">
 										<div class="friend-info">
-											<h2 class="question-title"><a href="{{ URL::to('questionitem/'.$question->slug) }}" title="">{{$question->title}}</a></h2>
+											<h2 class="question-title"><a href="{{ URL::to('questionitem/'.$question->slug) }}" title=""><strong>{{$question->title}}</strong></a></h2>
 											<div class="more">
 												<div class="more-post-optns">
 													<i class=""><svg class="feather feather-more-horizontal" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><circle r="1" cy="12" cx="12"/><circle r="1" cy="12" cx="19"/><circle r="1" cy="12" cx="5"/></svg></i>
@@ -58,14 +43,18 @@
 												</div>
 											</div>
 											<figure>
-												<img src="{{$question->author->pic}}" alt="">
+												@if(Sentinel::getUser()->pic)
+													<img src="{{Sentinel::getUser()->pic}}" alt="">
+												@else
+													<img src="{{asset('images/no_avatar.png')}}" alt="">
+												@endif
 											</figure>
 											<div class="friend-name">
 												<ins><a href="{{URL::to('user/{user_id}/profile')}}" title="">@if(Sentinel::getUser()->full_name == $question->author->full_name) You  @else {{$question->author->full_name}} @endif</a> asked this question</ins>
 												<span><i class="icofont-globe"></i> published: {{date("F j, Y, g:i a", strtotime($question->created_at))}}</span>
 											</div>
 											<div class="question-meta">
-												<strong>{!! $question->content !!} </strong>
+												<h5 class="font-weight-normal">{!! $question->content !!}</h5>
 												<div class="stat-tools">
 													@if(!$question->likedBy(Sentinel::getUser()))
 														<div class="box">
@@ -134,7 +123,9 @@
 											</div>
 										</div>
 									</div>
-								@endforeach
+									@empty
+									<h5 class="p-3">No question has been asked yet</h5>
+								@endforelse
 								<div class="float-right">
 									{{$questions->links()}}
 								</div>
@@ -143,9 +134,11 @@
 								<aside class="sidebar static right mt-5">
 									<div class="widget">
 										<h4 class="widget-title">Recent Questions <a title="" href="#" class="see-all">See All</a></h4>
-										@foreach ($latest_questions as $l_question)
+										@forelse ($latest_questions as $l_question)
 											<a href="{{ URL::to('questionitem/'.$question->slug) }}" title=""><i class="icofont-question-circle"></i> {{ $l_question->title }}</a><br />
-										@endforeach
+											@empty
+											<small>No recent question</small>
+										@endforelse
 									</div><!-- recent links -->
 									<div class="widget">
 										<h4 class="widget-title">Questions Analytics</h4>

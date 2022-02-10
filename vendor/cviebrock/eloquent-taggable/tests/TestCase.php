@@ -33,21 +33,6 @@ abstract class TestCase extends Orchestra
     /**
      * @inheritdoc
      */
-    protected function getEnvironmentSetUp($app)
-    {
-        // set up database configuration
-        $app['config']->set('database.default', 'test');
-
-        $app['config']->set('database.connections.test', [
-            'driver'   => 'sqlite',
-            'database' => ':memory:',
-            'prefix'   => '',
-        ]);
-    }
-
-    /**
-     * @inheritdoc
-     */
     protected function getPackageProviders($app)
     {
         return [
@@ -63,10 +48,10 @@ abstract class TestCase extends Orchestra
      * @param array $expected
      * @param array $actual
      */
-    protected function assertArrayValuesAreEqual(array $expected, array $actual): void
+    protected static function assertArrayValuesAreEqual(array $expected, array $actual): void
     {
-        $this->assertCount(count($expected), $actual);
-        $this->assertEqualsCanonicalizing($expected, $actual);
+        self::assertCount(count($expected), $actual);
+        self::assertEqualsCanonicalizing($expected, $actual);
     }
 
     /**

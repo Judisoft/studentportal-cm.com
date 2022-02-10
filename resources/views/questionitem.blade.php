@@ -5,7 +5,7 @@
 
 @section('content')
     <section>
-		<div class="gap">
+		<div class="no-gap">
 			<div class="container">
 				<div class="search-question">
 					<div class="restop-search">
@@ -19,6 +19,7 @@
 					<div class="col-lg-12">
 						<div id="page-contents" class="row merged20">
 							<div class="col-lg-9">
+								<h4 class="p-3"><a title="" href="{{URL::to('academia/my-questions/create')}}" class="button primary" style="text-decoration:none;">Ask Question</a></h4>
 								<div class="main-wraper">
 									<div class="friend-info border-bottom">
 										<h2 class="question-title"><a href="{{ URL::to('questionitem/'.$question->slug) }}" title="">{{$question->title}}</a></h2>
@@ -49,21 +50,25 @@
 												</div>
 											</div>
 										<figure>
-											<img src="{{$question->author->pic}}" alt="">
+											@if(Sentinel::getUser()->pic)
+												<img src="{{Sentinel::getUser()->pic}}" alt="">
+											@else
+												<img src="{{asset('images/no_avatar.png')}}" alt="">
+											@endif
 										</figure>
 										<div class="friend-name">
 											<ins><a href="{{URL::to('user/{user_id}/profile')}}" title="">@if(Sentinel::getUser()->full_name == $question->author->full_name) You  @else {{$question->author->full_name}} @endif</a> asked this question</ins>
 											<span><i class="icofont-globe"></i> published: {{date("F j, Y, g:i a", strtotime($question->created_at))}}</span>
 										</div>
 										<div class="question-meta">
-											<strong>
+											<h5 class="p-3">
                                                 {!! $question->content !!}
-											</strong>
+											</h5>
 											<ul class="tags">
                                                 @forelse($question->tags as $tag)
                                                     <li><a href="{{ URL::to('question/'.mb_strtolower($tag).'/tag') }}">{{ $tag }}</a></li>
                                                 @empty
-                                                    No Tags
+                                                    <small>No Tags available for this question</small>
                                                 @endforelse
 											</ul>
 										</div>	
@@ -92,15 +97,19 @@
 													</div>
 												</div>
 												<figure>
-													<img src="{{asset('images/resources/user1.jpg')}}" alt="">
+													@if(Sentinel::getUser()->pic)
+														<img src="{{Sentinel::getUser()->pic}}" alt="">
+													@else
+														<img src="{{asset('images/no_avatar.png')}}" alt="">
+													@endif
 												</figure>
 												<div class="friend-name">
 													<ins><a href="{{URL::to('user/{user_id}/profile')}}" title="">@if(Sentinel::getUser()->full_name == $answer->name) You  @else {{$answer->name}} @endif</a> answered this question</ins>
 													<span><i class="icofont-globe"></i> published: {{date("F j, Y, g:i a", strtotime($answer->created_at))}}</span>
 												</div>
 												<div class="question-meta">
-													<div class="alert alert-dark">
-														<h6>{!! $answer->answer !!}</h6>
+													<div class="alert alert-primary border-5 border-primary">
+														<h4 class="text-dark"><b>{!! $answer->answer !!}</b></h4>
 													</div>
 													<div class="stat-tools">
 													@if(!$answer->likedBy(Sentinel::getUser()))
